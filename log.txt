@@ -1,0 +1,1903 @@
+==18256== Memcheck, a memory error detector
+==18256== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==18256== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==18256== Command: ./build/main.exe
+==18256== 
+==18256== 
+==18256== HEAP SUMMARY:
+==18256==     in use at exit: 78,611 bytes in 988 blocks
+==18256==   total heap usage: 68,351 allocs, 67,363 frees, 29,154,262 bytes allocated
+==18256== 
+==18256== 2 bytes in 1 blocks are still reachable in loss record 1 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D3313D: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 2 bytes in 1 blocks are still reachable in loss record 2 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D2FC04: _XlcResolveLocaleName (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33347: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 7 bytes in 1 blocks are still reachable in loss record 3 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D3345F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 8 bytes in 1 blocks are still reachable in loss record 4 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D450E2: _XimOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 8 bytes in 1 blocks are still reachable in loss record 5 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x12E0E74D: void* llvm::object_creator<std::string>() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12276F33: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256== 
+==18256== 16 bytes in 1 blocks are still reachable in loss record 6 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0x6D30A90: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3100F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328FE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 16 bytes in 1 blocks are still reachable in loss record 7 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x40078B5: decompose_rpath (dl-load.c:661)
+==18256==    by 0x40082B2: cache_rpath (dl-load.c:2446)
+==18256==    by 0x40082B2: _dl_map_object (dl-load.c:2454)
+==18256==    by 0x400C361: openaux (dl-deps.c:63)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x400C5B4: _dl_map_object_deps (dl-deps.c:254)
+==18256==    by 0x4012A3B: dl_open_worker (dl-open.c:272)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256== 
+==18256== 16 bytes in 1 blocks are still reachable in loss record 8 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x12498CEA: void std::vector<llvm::PassRegistrationListener*, std::allocator<llvm::PassRegistrationListener*> >::_M_emplace_back_aux<llvm::PassRegistrationListener* const&>(llvm::PassRegistrationListener* const&) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12498E5D: llvm::PassRegistry::addRegistrationListener(llvm::PassRegistrationListener*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225E994: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256== 
+==18256== 16 bytes in 1 blocks are still reachable in loss record 9 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x1247E10A: void* llvm::object_creator<llvm::sys::SmartMutex<true> >() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DEB137: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262183: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 16 bytes in 1 blocks are still reachable in loss record 10 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x12DFC409: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12276908: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 16 bytes in 2 blocks are still reachable in loss record 11 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D314F5: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328FE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 18 bytes in 2 blocks are definitely lost in loss record 12 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D496C6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D4A4F4: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D45A28: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2AE54: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEFB30: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EEFF45: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE30CB: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2ECF: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 18 bytes in 2 blocks are definitely lost in loss record 13 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D496C6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D4A4F4: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D45A28: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2AE54: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEFB30: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EEFF45: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE30CB: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x401831: Mainclass::Mainclass() (mainclass.cpp:23)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 21 bytes in 1 blocks are still reachable in loss record 14 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262183: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 22 bytes in 1 blocks are still reachable in loss record 15 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1226219B: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 22 bytes in 1 blocks are still reachable in loss record 16 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x122621B3: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 22 bytes in 1 blocks are still reachable in loss record 17 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262272: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 23 bytes in 1 blocks are still reachable in loss record 18 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x122621CE: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 23 bytes in 1 blocks are still reachable in loss record 19 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1226225A: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 20 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D306B7: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D330E5: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 21 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D3A9BF: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 22 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA992C25: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98D07C: dbus_threads_init (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98D1B8: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973FAD: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 23 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA992C25: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA992C84: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA974065: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 24 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA992C25: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA992C84: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98148D: dbus_message_unref (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA988165: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97803E: dbus_connection_send_with_reply_and_block (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973E8B: dbus_bus_register (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97410E: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 25 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x702B0FD: XextCreateExtension (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==18256==    by 0xF5F0BAC: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5F0E60: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5F0A75: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C4AD8: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C107A: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C11E2: glXChooseVisual (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0x4EECA61: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EECCC0: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE15E5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE31F3: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 26 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x122621E2: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 27 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x122621FA: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 28 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1226222A: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 24 bytes in 1 blocks are still reachable in loss record 29 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262242: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 25 bytes in 1 blocks are still reachable in loss record 30 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DEB182: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262212: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 32 bytes in 1 blocks are still reachable in loss record 31 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x668263F: _dlerror_run (dlerror.c:141)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EE3CB2: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EEE80B: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 32 bytes in 1 blocks are still reachable in loss record 32 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12499274: llvm::PassRegistry::registerPass(llvm::PassInfo const&, bool) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225D3F2: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 32 bytes in 1 blocks are still reachable in loss record 33 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x12DEAF7D: void* llvm::object_creator<llvm::StringMap<void*, llvm::MallocAllocator> >() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DEB167: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262183: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 32 bytes in 1 blocks are indirectly lost in loss record 34 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10EC06EE: ???
+==18256==    by 0x10F316DE: ???
+==18256==    by 0x10F0B7FB: ???
+==18256==    by 0x10EE5C16: ???
+==18256==    by 0x10F2FAC6: ???
+==18256==    by 0x10E1840E: ???
+==18256==    by 0x4E9229A: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E92650: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E909E9: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E887BF: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40189F: Mainclass::Mainclass() (mainclass.cpp:29)
+==18256== 
+==18256== 32 bytes in 1 blocks are indirectly lost in loss record 35 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10EC06EE: ???
+==18256==    by 0x10F316DE: ???
+==18256==    by 0x10F49DBC: ???
+==18256==    by 0x10EC08C0: ???
+==18256==    by 0x10F482A7: ???
+==18256==    by 0x10EC7F62: ???
+==18256==    by 0x10E18979: ???
+==18256==    by 0x4E926A3: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E909E9: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E887BF: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40189F: Mainclass::Mainclass() (mainclass.cpp:29)
+==18256== 
+==18256== 37 bytes in 1 blocks are still reachable in loss record 36 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x4005009: local_strdup (dl-load.c:162)
+==18256==    by 0x4008359: _dl_map_object (dl-load.c:2509)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EECB28: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE15E5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 37 bytes in 1 blocks are still reachable in loss record 37 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x400AAC3: _dl_new_object (dl-object.c:165)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EECB28: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 39 bytes in 1 blocks are still reachable in loss record 38 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x40059FD: open_path (dl-load.c:2271)
+==18256==    by 0x40081F2: _dl_map_object (dl-load.c:2456)
+==18256==    by 0x400C361: openaux (dl-deps.c:63)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x400C5B4: _dl_map_object_deps (dl-deps.c:254)
+==18256==    by 0x4012A3B: dl_open_worker (dl-open.c:272)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256== 
+==18256== 40 bytes in 1 blocks are still reachable in loss record 39 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D0BFFB: XInitThreads (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEDC7C: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2E90: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 40 bytes in 1 blocks are still reachable in loss record 40 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D0C014: XInitThreads (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEDC7C: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2E90: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 40 bytes in 1 blocks are still reachable in loss record 41 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2F26C: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 40 bytes in 1 blocks are still reachable in loss record 42 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA9931F3: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA980F93: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9840B7: dbus_message_new_signal (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA975CE0: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA978754: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9740FB: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 40 bytes in 1 blocks are still reachable in loss record 43 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DF663F: llvm::sys::MutexImpl::MutexImpl(bool) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1247E11A: void* llvm::object_creator<llvm::sys::SmartMutex<true> >() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DEB137: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262183: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256== 
+==18256== 41 bytes in 1 blocks are still reachable in loss record 44 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x40059FD: open_path (dl-load.c:2271)
+==18256==    by 0x40083DB: _dl_map_object (dl-load.c:2526)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x10FC5973: ???
+==18256==    by 0x1129E282: ???
+==18256== 
+==18256== 41 bytes in 1 blocks are still reachable in loss record 45 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x400AAC3: _dl_new_object (dl-object.c:165)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x10FC5973: ???
+==18256== 
+==18256== 42 bytes in 1 blocks are still reachable in loss record 46 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA990EEE: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA974364: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 47 bytes in 5 blocks are still reachable in loss record 47 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2CC19: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 48 bytes in 1 blocks are still reachable in loss record 48 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0xBD52F4B: ??? (in /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x40011C9: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==18256== 
+==18256== 48 bytes in 1 blocks are still reachable in loss record 49 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0xBD52F69: ??? (in /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x40011C9: ??? (in /lib/x86_64-linux-gnu/ld-2.19.so)
+==18256== 
+==18256== 56 bytes in 1 blocks are still reachable in loss record 50 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x12DFFCE9: llvm::sys::RWMutexImpl::RWMutexImpl() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x124984B5: void* llvm::object_creator<llvm::PassRegistry>() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x124985A3: llvm::PassRegistry::getPassRegistry() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225D3E5: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 51 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D13862: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CF48: _XlcGetCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CB28: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 52 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CECF: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 53 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CEED: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 54 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CF0B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 55 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CF29: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 56 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D505D9: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 57 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D505F9: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 58 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50619: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 59 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50639: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 60 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50659: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 61 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50679: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 62 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50699: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 63 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D506B9: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 64 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D506D9: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 65 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D506F9: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 66 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50719: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 67 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A0A0: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 68 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A0C0: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 69 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A0E0: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 70 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A100: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 71 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A120: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 72 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A140: _XlcAddUtf8Converters (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 64 bytes in 1 blocks are still reachable in loss record 73 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D6AD: _XlcSetConverter (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D50721: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 73 bytes in 1 blocks are still reachable in loss record 74 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA990EEE: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973AB4: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9741C2: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 73 bytes in 1 blocks are still reachable in loss record 75 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA990EEE: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9743BD: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 80 bytes in 2 blocks are still reachable in loss record 76 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA9931F3: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA980F93: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98587B: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DDDF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DF05: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98E87B: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98EFC1: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DCA7: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977073: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977A4C: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA978029: dbus_connection_send_with_reply_and_block (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256== 
+==18256== 88 bytes in 1 blocks are still reachable in loss record 77 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x4C2AFCF: realloc (vg_replace_malloc.c:692)
+==18256==    by 0x4EAB95F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EABC33: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4E5F8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D325: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 136 bytes in 1 blocks are definitely lost in loss record 78 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x7647A4D: ??? (in /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0)
+==18256==    by 0x6D206C4: _XEnq (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D1D46E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D1E42F: _XReply (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D14198: XQueryExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D07EF1: XInitExtension (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x702B18E: XextAddDisplay (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==18256==    by 0x70268D4: XShmAttach (in /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0)
+==18256==    by 0x4EE8B82: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE0A9F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4018BA: Mainclass::Mainclass() (mainclass.cpp:30)
+==18256== 
+==18256== 142 bytes in 18 blocks are still reachable in loss record 79 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2DC46: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2ECB1: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2EDDF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2F14A: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 144 bytes in 1 blocks are still reachable in loss record 80 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x124984AA: void* llvm::object_creator<llvm::PassRegistry>() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x124985A3: llvm::PassRegistry::getPassRegistry() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225D3E5: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 144 bytes in 1 blocks are still reachable in loss record 81 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x40100E2: _dl_check_map_versions (dl-version.c:293)
+==18256==    by 0x4012EA4: dl_open_worker (dl-open.c:278)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x10FC5973: ???
+==18256==    by 0x1129E282: ???
+==18256==    by 0x10D3AD8F: ???
+==18256== 
+==18256== 160 bytes in 1 blocks are still reachable in loss record 82 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0xA992FBC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9935DF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EB35: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EE33: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97C65D: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97CCDB: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9840E2: dbus_message_new_signal (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA975CE0: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA978754: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9740FB: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 160 bytes in 1 blocks are still reachable in loss record 83 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x12DD762D: void* llvm::object_creator<llvm::SmallPtrSet<llvm::cl::OptionCategory*, 16u> >() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DF5182: llvm::ManagedStaticBase::RegisterManagedStatic(void* (*)(), void (*)(void*)) const (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DD8EBB: llvm::cl::OptionCategory::registerCategory() (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12276021: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 160 bytes in 2 blocks are still reachable in loss record 84 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D30A5E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3100F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328FE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 160 bytes in 5 blocks are still reachable in loss record 85 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x4013CEA: _dl_close_worker (dl-close.c:379)
+==18256==    by 0x401425B: _dl_close (dl-close.c:773)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x668210E: dlclose (dlclose.c:46)
+==18256==    by 0xF5EAA66: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C44F5: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C4578: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C46CD: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0x6CFAE21: XCloseDisplay (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEDFC1: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 168 bytes in 1 blocks are still reachable in loss record 86 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D306E1: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D330E5: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 176 bytes in 1 blocks are still reachable in loss record 87 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D306CE: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D330E5: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 184 bytes in 1 blocks are still reachable in loss record 88 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0xA980EF4: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9840B7: dbus_message_new_signal (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA975CE0: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA978754: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9740FB: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 184 bytes in 1 blocks are still reachable in loss record 89 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0xA980EF4: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA981CD9: dbus_message_new_method_call (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973E6C: dbus_bus_register (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97410E: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 184 bytes in 1 blocks are still reachable in loss record 90 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0xA980EF4: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA984D9A: dbus_message_new_error (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA987BF7: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977D5D: dbus_connection_send_with_reply (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97800F: dbus_connection_send_with_reply_and_block (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973E8B: dbus_bus_register (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97410E: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 204 bytes in 1 blocks are still reachable in loss record 91 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x12E0B260: llvm::StringMapImpl::init(unsigned int) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12E0B359: llvm::StringMapImpl::LookupBucketFor(llvm::StringRef) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12499113: llvm::PassRegistry::registerPass(llvm::PassInfo const&, bool) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225D3F2: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 204 bytes in 1 blocks are still reachable in loss record 92 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x12E0B260: llvm::StringMapImpl::init(unsigned int) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12E0B359: llvm::StringMapImpl::LookupBucketFor(llvm::StringRef) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12DEB0B8: llvm::sys::DynamicLibrary::AddSymbol(llvm::StringRef, void*) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x12262183: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 216 bytes in 18 blocks are still reachable in loss record 93 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D2EAA6: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2EDDF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2F14A: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 256 bytes in 2 blocks are still reachable in loss record 94 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0xA992FBC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA993092: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9931B2: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97D196: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9858CC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DDDF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DF05: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98E87B: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98EFC1: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DCA7: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977073: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256== 
+==18256== 274 bytes in 18 blocks are still reachable in loss record 95 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x605F989: strdup (strdup.c:42)
+==18256==    by 0x6D2EC1F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2EDDF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2F14A: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 288 bytes in 18 blocks are still reachable in loss record 96 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2DC21: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2ECB1: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2EDDF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2F14A: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 320 bytes in 1 blocks are still reachable in loss record 97 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0xA992FBC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9935DF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EB35: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EE33: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97C65D: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97CD02: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA981D01: dbus_message_new_method_call (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEEB90: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE8674: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2E3F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 320 bytes in 1 blocks are still reachable in loss record 98 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0xA992FBC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9935DF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EB35: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97EE33: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97C65D: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97CD02: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA981D01: dbus_message_new_method_call (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEEC54: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE8674: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE26D3: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D714: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 368 bytes in 2 blocks are still reachable in loss record 99 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0xA980EF4: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98587B: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DDDF: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DF05: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98E87B: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98EFC1: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98DCA7: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977073: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977A4C: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA978029: dbus_connection_send_with_reply_and_block (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973E8B: dbus_bus_register (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256== 
+==18256== 446 bytes in 2 blocks are still reachable in loss record 100 of 140
+==18256==    at 0x4C2AF2E: realloc (vg_replace_malloc.c:692)
+==18256==    by 0xA992FBC: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA993092: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9931B2: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA991D5C: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA992337: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97F020: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA9832C5: dbus_message_iter_append_basic (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA984E18: dbus_message_new_error (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA987BF7: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA977D5D: dbus_connection_send_with_reply (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA97800F: dbus_connection_send_with_reply_and_block (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256== 
+==18256== 456 bytes in 1 blocks are still reachable in loss record 101 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D2F20D: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 494 bytes in 12 blocks are still reachable in loss record 102 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x4005009: local_strdup (dl-load.c:162)
+==18256==    by 0x4008359: _dl_map_object (dl-load.c:2509)
+==18256==    by 0x400C361: openaux (dl-deps.c:63)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x400C5B4: _dl_map_object_deps (dl-deps.c:254)
+==18256==    by 0x4012A3B: dl_open_worker (dl-open.c:272)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256== 
+==18256== 520 bytes in 13 blocks are still reachable in loss record 103 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0xA998B71: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98D044: dbus_threads_init (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA98D1B8: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0xA973FAD: ??? (in /lib/x86_64-linux-gnu/libdbus-1.so.3.8.14)
+==18256==    by 0x4EEE700: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 533 bytes in 13 blocks are still reachable in loss record 104 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x400AAC3: _dl_new_object (dl-object.c:165)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x400C361: openaux (dl-deps.c:63)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x400C5B4: _dl_map_object_deps (dl-deps.c:254)
+==18256==    by 0x4012A3B: dl_open_worker (dl-open.c:272)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== 633 bytes in 49 blocks are still reachable in loss record 105 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D27E: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CDF2: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 720 bytes in 18 blocks are still reachable in loss record 106 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D2EA8E: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2EDDF: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2F14A: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D5059F: _XlcDefaultLoader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 760 bytes in 1 blocks are still reachable in loss record 107 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x40121B4: add_to_global (dl-open.c:106)
+==18256==    by 0x4012F06: dl_open_worker (dl-open.c:582)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EECB28: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE15E5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE31F3: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 776 bytes in 1 blocks are still reachable in loss record 108 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x4EABC3D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4E5F8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D325: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256==    by 0x4064DF: main (main.cpp:8)
+==18256== 
+==18256== 800 bytes in 50 blocks are still reachable in loss record 109 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D001: _XlcAddCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE02: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 110 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF7684: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 111 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF769A: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 112 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF76B0: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 113 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF76C6: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 114 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF76DC: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 115 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF76F2: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 116 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF7708: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 117 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF7570: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 118 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF758D: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 119 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF75AA: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 120 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF75C7: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 121 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF75E4: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 122 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF7601: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 990 bytes in 22 blocks are definitely lost in loss record 123 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF761E: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 1,024 bytes in 1 blocks are still reachable in loss record 124 of 140
+==18256==    at 0x4C29180: operator new(unsigned long) (vg_replace_malloc.c:324)
+==18256==    by 0x124995A3: llvm::PassRegistry::registerPass(llvm::PassInfo const&, bool) (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x1225D3F2: ??? (in /usr/lib/x86_64-linux-gnu/libLLVM-3.5.so.1)
+==18256==    by 0x400E9B9: call_init.part.0 (dl-init.c:78)
+==18256==    by 0x400EAA2: call_init (dl-init.c:36)
+==18256==    by 0x400EAA2: _dl_init (dl-init.c:126)
+==18256==    by 0x4012C07: dl_open_worker (dl-open.c:577)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256== 
+==18256== 1,028 bytes in 50 blocks are still reachable in loss record 125 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2D214: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CDF2: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 1,112 (1,048 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 126 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x10EC05A0: ???
+==18256==    by 0x10F316FD: ???
+==18256==    by 0x10F0B7FB: ???
+==18256==    by 0x10EE5C16: ???
+==18256==    by 0x10F2FAC6: ???
+==18256==    by 0x10E1840E: ???
+==18256==    by 0x4E9229A: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E92650: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E909E9: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E887BF: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40189F: Mainclass::Mainclass() (mainclass.cpp:29)
+==18256== 
+==18256== 1,179 bytes in 1 blocks are still reachable in loss record 127 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x400A823: _dl_new_object (dl-object.c:75)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EECB28: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 1,183 bytes in 1 blocks are still reachable in loss record 128 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x400A823: _dl_new_object (dl-object.c:75)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x40129E4: dl_open_worker (dl-open.c:235)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x10FC5973: ???
+==18256== 
+==18256== 1,200 bytes in 3 blocks are still reachable in loss record 129 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x40100E2: _dl_check_map_versions (dl-version.c:293)
+==18256==    by 0x4012EA4: dl_open_worker (dl-open.c:278)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0xF5EC0B5: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5EB0E7: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256==    by 0xF5C49BF: ??? (in /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0)
+==18256== 
+==18256== 1,392 bytes in 11 blocks are still reachable in loss record 130 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x40100E2: _dl_check_map_versions (dl-version.c:293)
+==18256==    by 0x4012EA4: dl_open_worker (dl-open.c:278)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x66825DC: _dlerror_run (dlerror.c:163)
+==18256==    by 0x66820C0: dlopen@@GLIBC_2.2.5 (dlopen.c:87)
+==18256==    by 0x4EECB28: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE15E5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE31F3: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 1,485 bytes in 33 blocks are definitely lost in loss record 131 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF766E: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 1,485 bytes in 33 blocks are definitely lost in loss record 132 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EF7553: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256== 
+==18256== 1,980 bytes in 44 blocks are definitely lost in loss record 133 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10EFBF56: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256==    by 0x10EEB171: ???
+==18256== 
+==18256== 1,980 bytes in 44 blocks are definitely lost in loss record 134 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x10F3F901: ???
+==18256==    by 0x10F3FCAC: ???
+==18256==    by 0x10F3FD73: ???
+==18256==    by 0x10EF7092: ???
+==18256==    by 0x10F09CA0: ???
+==18256==    by 0x10EE21E9: ???
+==18256==    by 0x10EE89EF: ???
+==18256==    by 0x10EE8C2B: ???
+==18256==    by 0x10EE9192: ???
+==18256==    by 0x10EE91EE: ???
+==18256==    by 0x10EEB171: ???
+==18256== 
+==18256== 2,048 bytes in 1 blocks are still reachable in loss record 135 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2F352: _XlcCreateLocaleDataBase (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3337F: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x40178D: Mainclass::Mainclass() (mainclass.cpp:11)
+==18256== 
+==18256== 2,631 bytes in 50 blocks are still reachable in loss record 136 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D2CB5F: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4E4D486: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 3,600 bytes in 50 blocks are still reachable in loss record 137 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D2D1D2: _XlcCreateDefaultCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CDF2: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256==    by 0x4EE2CE8: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 4,096 bytes in 1 blocks are still reachable in loss record 138 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x6D136A8: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CF48: _XlcGetCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CB28: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x4EEE7A5: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==18256== 
+==18256== 8,176 bytes in 1 blocks are still reachable in loss record 139 of 140
+==18256==    at 0x4C28C20: malloc (vg_replace_malloc.c:296)
+==18256==    by 0x6D13481: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D13835: _XrmInternalStringToQuark (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CF48: _XlcGetCharSet (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CB28: _XlcAddCT (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2CE7B: _XlcInitCTInfo (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D33232: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D328F2: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3310B: _XlcCreateLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D545AF: _XlcUtf8Loader (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D3A9AD: _XOpenLC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256==    by 0x6D2B4EC: XOpenIM (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==18256== 
+==18256== 15,387 bytes in 13 blocks are still reachable in loss record 140 of 140
+==18256==    at 0x4C2AD10: calloc (vg_replace_malloc.c:623)
+==18256==    by 0x400A823: _dl_new_object (dl-object.c:75)
+==18256==    by 0x4005E43: _dl_map_object_from_fd (dl-load.c:1059)
+==18256==    by 0x400805E: _dl_map_object (dl-load.c:2605)
+==18256==    by 0x400C361: openaux (dl-deps.c:63)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x400C5B4: _dl_map_object_deps (dl-deps.c:254)
+==18256==    by 0x4012A3B: dl_open_worker (dl-open.c:272)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256==    by 0x40123FA: _dl_open (dl-open.c:661)
+==18256==    by 0x668202A: dlopen_doit (dlopen.c:66)
+==18256==    by 0x400E873: _dl_catch_error (dl-error.c:187)
+==18256== 
+==18256== LEAK SUMMARY:
+==18256==    definitely lost: 22,010 bytes in 468 blocks
+==18256==    indirectly lost: 64 bytes in 2 blocks
+==18256==      possibly lost: 0 bytes in 0 blocks
+==18256==    still reachable: 56,537 bytes in 518 blocks
+==18256==         suppressed: 0 bytes in 0 blocks
+==18256== 
+==18256== For counts of detected and suppressed errors, rerun with: -v
+==18256== ERROR SUMMARY: 22 errors from 22 contexts (suppressed: 5 from 2)
