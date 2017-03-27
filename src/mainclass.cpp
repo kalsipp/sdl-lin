@@ -97,14 +97,14 @@ void Mainclass::run(){
 		if(diff.count() > m_frame_delay){
 			SDL_SetRenderDrawColor(m_main_renderer, 0, 0, 0, 1);
 			SDL_RenderClear(m_main_renderer);
-			for (std::vector<std::unique_ptr<Gameobject>>::iterator it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
+			for (auto it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
 			{
 				(*it)->update(keymanager, m_gameobjects); //Update gameobjects
 
 
 				if(debug_show_colliders){
 					SDL_SetRenderDrawColor(m_main_renderer, 255, 255, 255, 255);
-					//if((*it)->collider() != NULL)(*it)->collider()->render(m_main_renderer);
+					if((*it)->collider() != NULL)(*it)->collider()->render(m_main_renderer);
 					//if((*it)->trigger_collider() != NULL)(*it)->trigger_collider()->render(m_main_renderer);
 				}else{
 					//std::cout << "render" << std::endl;
@@ -125,9 +125,17 @@ void Mainclass::setup_gameobjects(){
 	
 	
 	std::cout << "Setup gameobjects start" << std::endl;
-	m_gameobjects.push_back(std::unique_ptr<Gameobject> (new Player()));
-	m_gameobjects[0]->visualcomponent().load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
-	m_gameobjects[0]->visualcomponent().scale(5);
+	
+	Gameobject * go = new Player(m_main_renderer);
+	go->move(100,100);
+	m_gameobjects.push_back(go);
+	go = new StaticObject();
+	go->move_to(200,200);
+	go->visualcomponent()->load_spritesheet("media/stat.png", 32, 32, m_main_renderer);
+	m_gameobjects.push_back(go);
+	//m_gameobjects.push_back(std::unique_ptr<Gameobject> (new Player()));
+	//m_gameobjects[0]->visualcomponent()->
+	//m_gameobjects[0]->visualcomponent()->scale(5);
 	/*
 	Gameobject * g = new Player(this);
 	g->load_spritesheet("media/player_new.png");

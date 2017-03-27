@@ -6,6 +6,7 @@
 #include "visualcomponent.hpp"
 #include "collider.hpp"
 #include "keymanager.hpp"
+#include "interactioncomponent.hpp"
 //#include <SDL2/SDL_image.h>
 //#include <SDL2/SDL_ttf.h>
 
@@ -17,15 +18,22 @@ public:
 	Gameobject();
 	Gameobject(const Gameobject &);
 	virtual ~Gameobject();
-	virtual void update(Keymanager &, const std::vector<std::unique_ptr<Gameobject>> & gameobjects);
+	virtual void update(Keymanager &, const std::vector<Gameobject*> & gameobjects);
 	virtual void draw(SDL_Renderer *);
 	Position & position();
 	const Position & position()const;
+	virtual void move(float,float);
+	virtual void move_to(float,float);
 	bool operator<(const Gameobject  &)const;
-	VisualComponent & visualcomponent();
+	VisualComponent* visualcomponent();
+	InteractionComponent * interactioncomponent();
+	Collider* collider();
+	//const Collider & collider()const;
 protected:
 	Position m_position;
-	std::unique_ptr<VisualComponent> m_visualcomponent = nullptr;
-	std::unique_ptr<Collider> m_collider = nullptr;
+
+	VisualComponent * m_visualcomponent = nullptr;
+	Collider * m_collider = nullptr;
+	InteractionComponent * m_interactioncomponent = nullptr;
 
 };

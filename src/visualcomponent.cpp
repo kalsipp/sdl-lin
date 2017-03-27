@@ -1,5 +1,5 @@
 #include "visualcomponent.hpp"
-
+//#####################
 Animation::Animation(){}
 Animation::Animation(std::initializer_list<unsigned int> p){
 	std::vector<unsigned int> anims(p);
@@ -26,7 +26,7 @@ void Animation::next_frame(){
 	std::cout << m_frames[current_frame].first << std::endl;
 	*/
 }
-
+//#########################
 
 
 VisualComponent::VisualComponent(){

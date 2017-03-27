@@ -20,6 +20,15 @@ void Collider::set_size(float x, float y){
 	m_size_x = x;
 	m_size_y = y;
 }
+
+void Collider::set_is_trigger(bool val){
+	m_trigger = val;
+}
+
+bool Collider::is_trigger(){
+	return m_trigger;
+}
+
 float Collider::x(){
 	return m_position.x()+m_offset.x();
 }
@@ -104,7 +113,7 @@ bool Collider::collision_y(const Collider&other){
 */
 bool Collider::collision_check(const Collider * other){
 	if(!m_enabled) return false;
-	if(other == NULL) return false;
+	if(other ==  nullptr) return false;
 	//std::cout << "HUr" << std::endl;
 	
 	//if() std::cout  << "horizontally" << std::endl;

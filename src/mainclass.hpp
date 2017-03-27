@@ -10,8 +10,10 @@
 #include <memory>
 #include <time.h>
 #include "gameobject.hpp"
+#include "staticobject.hpp"
 #include "player.hpp"
 #include "keymanager.hpp"
+#include "npc.hpp"
 /*
 #include "texture.hpp"
 
@@ -51,7 +53,7 @@ private:
 	SDL_Event m_main_event; //Event container
 	Keymanager keymanager;
 	//sstd::map<int, bool> m_keys; //<sdl's macro for a key, it's current value>
-	std::vector<std::unique_ptr<Gameobject>> m_gameobjects;
+	std::vector<Gameobject*> m_gameobjects;
 	//Player * m_player; //Note that player also exists in m_gameobjects
 	bool debug_show_colliders = false;
 };

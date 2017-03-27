@@ -19,6 +19,8 @@ public:
 	std::pair<float,float> size();	
 	std::pair<float,float> size()const;
 	void set_size(float x, float y);
+	void set_is_trigger(bool);
+	bool is_trigger();
 	bool collision_x(const Collider &);
 	bool collision_y(const Collider &);
 	bool collision_check(const Collider *); //Checks collision in x and y. z is ignored. 
@@ -35,7 +37,8 @@ public:
 private:
 	const Position & m_position; //points to parent's position. 
 	Position m_offset;
-	float m_size_x;
-	float m_size_y;
-	bool m_enabled;
+	bool m_trigger = false;
+	float m_size_x = 32;
+	float m_size_y = 32;
+	bool m_enabled = false;
 };

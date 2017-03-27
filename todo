@@ -1,5 +1,7 @@
 Make player walk DONE
 Make player animations change to where he's walking and if idle DONE
-Make player collide with stuff 
-	Make stuff to collide with
-	Make collider
+Make player collide with stuff DONE
+	Make stuff to collide with DONE
+	Make collider DONE
+
+Make static NPC with animations that can be interacted with
