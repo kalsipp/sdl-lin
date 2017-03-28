@@ -7,6 +7,7 @@ Animation::Animation(std::initializer_list<unsigned int> p){
 	for(unsigned int i = 0; i < anims.size(); i+=2){
 		m_frames.push_back(std::make_pair(anims[i], anims[i+1]));
 	}
+
 }
 unsigned int Animation::get_current_frame(){
 	assert(m_frames.size() >= current_frame && "Attempting to get frame outsize of m_frames");
@@ -30,6 +31,7 @@ void Animation::next_frame(){
 
 
 VisualComponent::VisualComponent(){
+	//m_last_animation = std::chrono::high_resolution_clock::now();
 	//Animation k = {0, 300, 1, 300};
 	//add_animation(0, k);
 
@@ -50,7 +52,6 @@ unsigned int VisualComponent::current_animation(){
 	return m_current_animation;
 }
 void VisualComponent::render(SDL_Renderer* main_renderer, const Position & position){
-
 	std::chrono::time_point<std::chrono::high_resolution_clock> now = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> diff = now-m_last_animation;
 	std::chrono::milliseconds diff_ms = std::chrono::duration_cast<std::chrono::milliseconds>(diff);
@@ -60,18 +61,42 @@ void VisualComponent::render(SDL_Renderer* main_renderer, const Position & posit
 		m_last_animation = now; 
 		m_animations[m_current_animation].next_frame();
 	}
+	//std::cout << "Current frame " << m_animations[m_current_animation].get_current_frame() << " size " << m_textures.size() << std::endl; 
 	assert(m_animations[m_current_animation].get_current_frame() < m_textures.size() && "The attempted frame/texture does not exist");
+	
 	m_textures[m_animations[m_current_animation].get_current_frame()]->render(position.x(), position.y(), main_renderer);
+	SDL_RenderCopyEx(main_renderer, m_texture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
+	/*
+	SDL_Texture * k = m_texture;
+	SDL_RenderCopy(main_renderer, m_texture, NULL, NULL);
+	*/
 }
 
 
 
+/*
 bool VisualComponent::load_spritesheet(const std::string & path, int sprite_width, int sprite_height, SDL_Renderer * main_renderer){ 
 	SDL_Surface * full_sheet = NULL;
 	full_sheet = IMG_Load(path.c_str());
-	bool success = true;
 	if(full_sheet == NULL){
 		std::cout << "Spritesheet Unable to load image " << path << " SDL Error: " << SDL_GetError() << "." << std::endl;
+	}else{
+		m_texture = SDL_CreateTextureFromSurface(main_renderer, full_sheet);
+		if(m_texture == NULL)std::cout << "Unable to load texture SDL Error: "<< SDL_GetError() <<std::endl;
+		SDL_FreeSurface(full_sheet);
+	}
+	SDL_Texture * k = m_texture;
+	return m_texture != NULL;
+}
+*/
+bool VisualComponent::load_spritesheet(const std::string & path, int sprite_width, int sprite_height, SDL_Renderer * main_renderer){ 
+	SDL_Surface * full_sheet = NULL;
+	full_sheet = IMG_Load(path.c_str());
+	
+
+	bool success = true;
+	if(full_sheet == NULL){
+		//std::cout << "Spritesheet Unable to load image " << path << " SDL Error: " << SDL_GetError() << "." << std::endl;
 		success = false;
 	}else{
 		assert(full_sheet->w%sprite_width == 0 && full_sheet->h%sprite_height==0);
@@ -80,7 +105,10 @@ bool VisualComponent::load_spritesheet(const std::string & path, int sprite_widt
 		int pos = 0;
 		for(int y = 0; y < y_max; ++y){
 			for(int x = 0; x < x_max; ++x){
+				//std::cout << "anotner" << std::endl; 
 				SDL_Rect srcrect = {x*sprite_width, y*sprite_height, sprite_width, sprite_height};
+				//std::cout << "x " << x*sprite_width << " y " << y*sprite_height << " w " << sprite_width << " h " << sprite_height << std::endl;
+				
 				SDL_Surface * tmp = SDL_CreateRGBSurface(
 					full_sheet->flags, 
 					sprite_width, 
@@ -92,18 +120,21 @@ bool VisualComponent::load_spritesheet(const std::string & path, int sprite_widt
 					full_sheet->format->Amask
 					);
 				SDL_BlitSurface(full_sheet, &srcrect, tmp, NULL); 
+				
 				Texture * new_text = new Texture();
-				//Texture * new_text = new Texture();
-				new_text->load_image_from_surface(tmp, main_renderer);
+				bool success = new_text->load_image_from_surface(tmp, main_renderer);
+				std::string k = "Texture could not be properly loaded" + path;
+				assert(success == true && k.c_str());
 				m_textures.push_back(new_text);
+				SDL_FreeSurface(tmp);
 				pos++;
 
 			}
 		}
 	}
+	//SDL_FreeSurface(full_sheet);
 	return success;
 }
-
 bool & VisualComponent::enabled(){
 	return m_enabled;
 }

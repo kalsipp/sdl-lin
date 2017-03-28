@@ -5,6 +5,5 @@
 class StaticObject:public Gameobject{
 public:
 	StaticObject();	
-	virtual void draw(SDL_Renderer * );	
 private:
 };

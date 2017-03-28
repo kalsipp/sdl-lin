@@ -1,0 +1,90 @@
+Each object owning an interactioncomponent may have an extra optional argument in the constructor which defines the file in which its events will be contained. If this argument is left empty then the interactioncomponent will either default to disabling itself or the event will be set to a pre-set for that class. Chest only needs a list of items as additional input as the event is predefined. 
+
+class Action{
+	public:
+		Action();
+		void update(){}
+	private:
+}
+
+class Action_Line : public Action{
+	public:
+		Action_Line(std::string & line);
+		bool update(mainclass*){
+			if(!printed){
+				mainclass->ui()->chatbox()->clean_box()
+				mainclass->ui()->chatbox()->add_line()
+			}else{
+				if(mainclass->keymanager()->key_pressed(m_actionkey))
+				return true;
+			}
+			return false;
+		}
+	private:
+		std::string line;
+		bool printed = false;
+};
+
+class Event{
+	public:
+		Event(std::string & filename)
+		bool update(mainclass*){
+			if(m_actions.front()->update(mainclass)) m_actions.pop();
+			return m_actions.size() != 0;
+		}
+	private:
+		std::queue<Action> m_actions;
+		int m_actionkey = SDLk_x;
+};
+
+When a player triggers another gameobject's event that gameobject calls mainclass's new_event(Event, Gameobject * source) function. This function saves both and sets that a bool that an event is running. At the start of next tick the event_running bool is set so the mainclass will restrain normal player and gameobject update. The gameobject that called the event to happen owns a queue of events where the called event was the foremost item. If the length of the queue is more than one then the event is popped from the list. If the length is one then that event is kept and will be reused indefinitely. 
+
+The mainclass will instead call the current Event's update(mainclass*) function. The Event is a class that contains a queue of actions. The event will run the next action in the queue. If that event is instant (setting up windows or giving items) then the event will continue to take another action until an action which is not instant arrives. The event then polls the action if it is finished. Different actions may define their own finish definitions. Most probably time and/or keypress dependant. 
+
+When the event's action queue is finished it informs the mainclass which resets the event_running flag and in the same tick the game may continue to run as normal. The mainclass forgets the event and event caller in the same reset. 
+
+
+$ indicates start of event. 
+Each command is a line of a command. Arguments are separated by spaces
+
+Each time the npc is interacted with it will run the next event, in order as written. If this is the final event then loop it. 
+
+First line(s) is(are) settings. These will be hard coded. 
+
+# is comment, skip that line
+
+lock player - removes the players ability to move, open menus or any other action. The player 
+cannot interact with things. 
+
+open conversation - brings up the chat window
+
+setface <filename> - loads a picture from file and assigns it to face
+
+line <who> <string> - The first argument is the name of the person. Types the rest of the arguments into the chat window, removing any previous text first.
+line can only be continued by a player's actionbutton press.
+
+giveitem <int> - Adds selected item to the player's inventory. 
+
+linegiveitem <int> Types a generic "you recieved <item name> gz" into the chatbox as per line. Can only be continued by player's actionbutton. 
+
+
+$ 	
+lock player
+open conversation
+setface media/happyface.png
+line dude Hello world
+setface media/angryface.png
+line dude this makes me upset
+giveitem 42
+linegiveitem 42
+close conversation
+unlock player
+$
+lock player
+open conversation
+setface media/bored.png
+line dude pls go away
+close conversation 
+unlock player
+$
+#Will generate an event but with nothing in it. Good if the npc goes quiet in the end. 

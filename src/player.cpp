@@ -11,12 +11,11 @@ const int Player::ANIMATION_WALKING_RIGHT = 6;
 const int Player::ANIMATION_WALKING_LEFT = 7;
 
 
-Player::Player(SDL_Renderer * main_renderer){
+Player::Player(){
 	//m_visualcomponent.reset((new VisualComponent()));
 	m_visualcomponent = new VisualComponent();
-	m_visualcomponent->load_spritesheet("media/player_new.png", 32, 32, main_renderer);
-	m_visualcomponent->scale(4);
-	m_collider = new Collider(m_position, 96, 128);
+	m_collider = new Collider(&m_position, 96, 128);
+	m_name = "Player";
 	//m_collider.reset(new Collider());
 	setup_animations();
 }

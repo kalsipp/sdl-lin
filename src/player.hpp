@@ -7,11 +7,11 @@
 #include "collider.hpp"
 class Player:public Gameobject{
 	public:
-		Player(SDL_Renderer * );
+		Player();
 		~Player();
 		virtual void update(Keymanager & keys, const std::vector<Gameobject*> & gameobjects);
+		virtual void setup_animations();
 	protected:
-		void setup_animations();
 		void update_animations();
 		void dynamic_movement(const std::pair<float,float> & movement, const std::vector<Gameobject*> & gameobjects);
 		void update_movement(Keymanager & keys, const std::vector<Gameobject*> & gameobjects);

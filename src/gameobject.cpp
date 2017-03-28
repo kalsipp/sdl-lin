@@ -39,7 +39,9 @@ InteractionComponent * Gameobject::interactioncomponent(){
 Collider * Gameobject::collider(){
 	return m_collider;
 }
-
+const std::string & Gameobject::name(){
+	return m_name;
+}
 void Gameobject::move(float x,float y){
 	m_position.x() += x;
 	m_position.y() += y;

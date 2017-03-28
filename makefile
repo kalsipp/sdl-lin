@@ -1,6 +1,6 @@
 CC = g++
 #CC = clang
-FLAGS = -std=c++1y -Wall -pedantic -g
+FLAGS = -std=c++11 -Wall -pedantic -g
 CPP_FILES := $(wildcard src/*.cpp)
 #SDL_DIR = "include/SDL2-2.0.4/i686-w64-mingw32"
 #SDL_IMG_DIR = "include/SDL2_image-2.0.1/i686-w64-mingw32"

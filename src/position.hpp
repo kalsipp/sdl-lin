@@ -2,7 +2,7 @@
 #include <initializer_list>
 #include <vector>
 #include <cmath>
-
+#include <iostream>
 /*
 	Class to hold x, y and z as well as perform transforms to them.
 */

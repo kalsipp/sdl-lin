@@ -3,7 +3,8 @@
 const float Position::to_rad = M_PI/180;
 
 
-Position::Position(){}
+Position::Position(){
+}
 
 Position::Position(std::initializer_list<float> n){
 	std::vector<float> p(n);

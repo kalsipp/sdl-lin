@@ -4,7 +4,7 @@
 #include "mainclass.hpp"
 int main( int argc, char* args[] )
 {
-	std::cout << "main started" << std::endl;
+	std::cout << "\nmain started" << std::endl;
 	Mainclass game;
 	game.run();
 	std::cout << "main ended" << std::endl;

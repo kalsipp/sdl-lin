@@ -1,11 +1,11 @@
 #include "collider.hpp"
 
 
-Collider::Collider(const Position & refpos, float size_x, float size_y, bool enabled) : m_position(refpos), m_size_x(size_x), m_size_y(size_y), m_enabled(enabled){
+Collider::Collider(const Position * refpos, float size_x, float size_y, bool enabled) : m_position(refpos), m_size_x(size_x), m_size_y(size_y), m_enabled(enabled){
 	m_offset = Position(0,0);
 }
 
-Collider::Collider(const Position & refpos, Position & offset, float size_x, float size_y, bool enabled): m_position(refpos), m_offset(offset), m_size_x(size_x), m_size_y(size_y), m_enabled(enabled){
+Collider::Collider(const Position * refpos, const Position & offset, float size_x, float size_y, bool enabled): m_position(refpos), m_offset(offset), m_size_x(size_x), m_size_y(size_y), m_enabled(enabled){
 }
 
 
@@ -14,6 +14,10 @@ std::pair<float, float> Collider::size(){
 }
 std::pair<float, float> Collider::size()const{
 	return std::make_pair(m_size_x, m_size_y);
+}
+
+Gameobject * Collider::parent(){
+	return m_parent;
 }
 
 void Collider::set_size(float x, float y){
@@ -30,17 +34,17 @@ bool Collider::is_trigger(){
 }
 
 float Collider::x(){
-	return m_position.x()+m_offset.x();
+	return m_position->x()+m_offset.x();
 }
 float Collider::x()const{
-	return m_position.x()+m_offset.x();
+	return m_position->x()+m_offset.x();
 }
 float Collider::y(){
-	return m_position.y()+m_offset.y();
+	return m_position->y()+m_offset.y();
 }
 
 float Collider::y()const{
-	return m_position.y()+m_offset.y();
+	return m_position->y()+m_offset.y();
 }
 
 float Collider::right()const{
@@ -60,16 +64,16 @@ float Collider::bottom()const{
 }
 
 const Position & Collider::position()const{
-	return m_position;
+	return *m_position;
 }
 
 void Collider::render(SDL_Renderer * main_renderer){
-	int posx = round(m_position.x() + m_offset.x());
-	int posy = round(m_position.y() + m_offset.y());
+	int posx = round(x() + m_offset.x());
+	int posy = round(y() + m_offset.y());
 	int sizex = round(m_size_x);
 	int sizey = round(m_size_y);
 	SDL_Rect rekt = {posx, posy, sizex, sizey};
-	SDL_RenderDrawRect(main_renderer, &rekt);
+	SDL_RenderDrawRect(main_renderer, &rekt);  
 }
 
 

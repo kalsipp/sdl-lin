@@ -40,5 +40,6 @@ private:
 	std::chrono::time_point<std::chrono::high_resolution_clock> m_last_animation;
 	std::map<int, Animation> m_animations;
 	std::vector<Texture*> m_textures;
+	SDL_Texture * m_texture = NULL;
 	
 };

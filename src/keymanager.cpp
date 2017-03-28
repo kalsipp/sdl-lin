@@ -14,6 +14,7 @@ Keymanager::Keymanager(){
 }
 
 void Keymanager::set(int key, bool val){
+	//if(m_keys.count(key) > 0) m_keys[key] = val;
 	m_keys[key] = val;
 }
 
