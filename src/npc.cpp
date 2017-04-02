@@ -1,5 +1,5 @@
 #include "npc.hpp"
-
+#include "mainclass.hpp"
 const int NPC::ANIMATION_IDLE_UP = 0;
 const int NPC::ANIMATION_IDLE_DOWN = 1;
 const int NPC::ANIMATION_IDLE_RIGHT = 2;
@@ -10,24 +10,23 @@ const int NPC::ANIMATION_WALKING_RIGHT = 6;
 const int NPC::ANIMATION_WALKING_LEFT = 7;
 
 
-NPC::NPC(){
+NPC::NPC(Mainclass * mainclass) : Gameobject(mainclass){
 	m_collider = new Collider(&m_position, 96, 128);
-	Collider refcollider(&m_position, 128, 160);
+	Collider refcollider(&m_position , 160, 160);
 	refcollider.set_is_trigger(true);
 	m_interactioncomponent = new InteractionComponent(refcollider);
 	m_visualcomponent = new VisualComponent();
+	setup_animations();
 }
 
 NPC::~NPC(){
 	
 }
 
-void NPC::update(Keymanager & keys, const std::vector<Gameobject*> & gameobjects){
-	std::vector<Gameobject*> triggerlist = m_interactioncomponent->triggered();
-	while(triggerlist.size() != 0){
-		Gameobject * triggles = triggerlist.back();
-		triggerlist.pop_back();
-		triggered(triggles);
+void NPC::update(){
+	if(m_interactioncomponent->triggered()){
+		m_interactioncomponent->start_event(m_mainclass);
+		m_interactioncomponent->reset();
 	}
 }
 

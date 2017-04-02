@@ -22,14 +22,11 @@ public:
 	void set_size(float x, float y);
 	void set_is_trigger(bool);
 	bool is_trigger();
-	Gameobject * parent();
 	bool collision_x(const Collider &);
 	bool collision_y(const Collider &);
 	bool collision_check(const Collider *); //Checks collision in x and y. z is ignored. 
 	const Position & position()const;
-	float x();
 	float x()const;
-	float y();
 	float y()const;
 	float right()const;
 	float left()const;
@@ -37,7 +34,7 @@ public:
 	float bottom()const;
 	void render(SDL_Renderer * main_renderer);
 private:
-	Gameobject * m_parent = nullptr;
+	//Gameobject * m_parent = nullptr;
 	const Position * m_position; //points to parent's position. 
 	Position m_offset;
 	bool m_trigger = false;

@@ -12,11 +12,11 @@
 class Mainclass;
 class Gameobject{
 public:
-	Gameobject();
+	Gameobject(Mainclass*);
 	Gameobject(const Gameobject &);
 	virtual ~Gameobject();
-	virtual void update(Keymanager &, const std::vector<Gameobject*> & gameobjects);
-	virtual void draw(SDL_Renderer *);
+	virtual void update();
+	virtual void draw();
 	Position & position();
 	const Position & position()const;
 	virtual void move(float,float);
@@ -31,6 +31,7 @@ public:
 	Collider* collider();
 	//const Collider & collider()const;
 protected:
+	Mainclass * m_mainclass = nullptr;
 	Position m_position;
 	std::string m_name = "";
 	VisualComponent * m_visualcomponent = nullptr;

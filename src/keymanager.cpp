@@ -14,8 +14,34 @@ Keymanager::Keymanager(){
 }
 
 void Keymanager::set(int key, bool val){
-	//if(m_keys.count(key) > 0) m_keys[key] = val;
+
+	if(m_keys.count(key) == 0){ 
+		m_keys[key] = false;
+		//std::cout <<"keys " << m_keys[key] << " val " << val << std::endl;
+	}
+	if(m_keys[key] == true && val == false) { //key just went up
+		m_keys_down[key] = false;
+	}else if(m_keys[key] == false && val == true){ //key just went down
+		
+		m_keys_down[key] = true;
+	}else{
+		m_keys_down[key] = false;
+	}
 	m_keys[key] = val;
+}
+
+bool Keymanager::key_down(int key){
+	if(m_keys_down.count(key) > 0) {
+		return m_keys_down.at(key);
+	}
+	m_keys_down[key] = false;
+	return false;
+}
+
+void Keymanager::update(){
+	for(auto i = m_keys.begin(); i != m_keys.end(); ++i){
+		m_keys_down[i->first] = false;
+	}
 }
 
 bool Keymanager::key(int key){

@@ -1,6 +1,6 @@
 #include "staticobject.hpp"
 
-StaticObject::StaticObject(){
+StaticObject::StaticObject(Mainclass * mainclass) : Gameobject(mainclass){
 	m_visualcomponent = new VisualComponent();
 	/*
 	*/

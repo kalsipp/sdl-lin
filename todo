@@ -5,3 +5,7 @@ Make player collide with stuff DONE
 	Make collider DONE
 
 Make static NPC with animations that can be interacted with
+	Make npc print hello when triggered
+	Create UI class
+	Create Chatbox
+	Make event and action system. 

@@ -1,10 +1,5 @@
 #include "mainclass.hpp"
-/*
-#include "gameobject.hpp"
-#include "npc.hpp"
-#include "player.hpp"
-#include "actor.hpp"
-*/
+
 Mainclass::Mainclass(){
 	std::cout << "Initalizing mainclass..." << std::endl;
 	//Initialize SDL
@@ -28,10 +23,14 @@ Mainclass::Mainclass(){
 		}else{
 			m_main_renderer = SDL_CreateRenderer(m_main_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 			m_main_surface = SDL_GetWindowSurface( m_main_window );
+			if(m_main_surface == NULL){
+				std::cout << "Surface could not be created! SDL Error: " << std::string(SDL_GetError()) << std::endl;
+				m_init_ok = false;
+			}
 			if(m_main_renderer == NULL){
 				std::cout << "Renderer could not be created! SDL Error: " << std::string(SDL_GetError()) << std::endl;
 				m_init_ok = false;
-			}else
+			}else if(m_init_ok)
 			{
 				SDL_SetRenderDrawColor(m_main_renderer, 0x0, 0x0, 0x0, 0x0);
 				int img_flags = IMG_INIT_PNG;
@@ -49,14 +48,9 @@ Mainclass::Mainclass(){
 			}
 		}
 	}
-	setup_keys();
 	setup_gameobjects();
 	m_last_frame = std::chrono::high_resolution_clock::now();
 	std::cout << "Finished initializing mainclass." << std::endl;
-	//int *load_spritesheet x = new int(10);
-	//Destroy window
-
-
 }
 Mainclass::~Mainclass(){ 
 	std::cout << "Destroying mainclass..." << std::endl;
@@ -65,6 +59,7 @@ Mainclass::~Mainclass(){
 	
 	for(auto i = m_gameobjects.begin(); i != m_gameobjects.end(); ++i){
 		delete *i;
+		//*i = nullptr;
 	}
 	
 	m_gameobjects.clear();
@@ -73,6 +68,8 @@ Mainclass::~Mainclass(){
 	SDL_DestroyRenderer(m_main_renderer);
 	SDL_FreeSurface(m_main_surface);
 	SDL_DestroyWindow( m_main_window );
+	/*
+	*/
 	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
@@ -80,7 +77,6 @@ Mainclass::~Mainclass(){
 }
 void Mainclass::run(){
 	std::cout << "Running mainloop.." << std::endl;
-
 	while(m_running){
 		std::chrono::time_point<std::chrono::high_resolution_clock> now = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> diff = now-m_last_frame;
@@ -88,147 +84,125 @@ void Mainclass::run(){
 
 		//Player Update
 		update_keys();
-		if(keymanager.key(SDLK_p)){
+		if(m_keymanager.key_down(SDLK_p)){
 			debug_show_colliders = !debug_show_colliders;
-			keymanager.set(SDLK_p, false);
 		}
 
-		std::sort(m_gameobjects.begin(), m_gameobjects.end());
+		if(m_event_ongoing){
+			m_event_ongoing = (m_current_event.update(this));
+		}
+
 
 		//Rendering
 		if(diff.count() > m_frame_delay){
+			std::sort(m_gameobjects.begin(), m_gameobjects.end());
 			SDL_SetRenderDrawColor(m_main_renderer, 0, 0, 0, 1);
 			SDL_RenderClear(m_main_renderer);
 			for (auto it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
 			{
-				(*it)->update(keymanager, m_gameobjects); //Update gameobjects
-
+				if(!m_event_ongoing){
+					(*it)->update(); //Update gameobjects
+				}
 
 				if(debug_show_colliders){
 					SDL_SetRenderDrawColor(m_main_renderer, 255, 255, 255, 255);
 					if((*it)->collider() != nullptr)(*it)->collider()->render(m_main_renderer);
 					SDL_SetRenderDrawColor(m_main_renderer, 255, 0,0,255);
 					if((*it)->interactioncomponent() != nullptr) (*it)->interactioncomponent()->triggercollider()->render(m_main_renderer);
-					//if((*it)->trigger_collider() != NULL)(*it)->trigger_collider()->render(m_main_renderer);
 				}else{
-					//std::cout << "render" << std::endl;
-					(*it)->draw(m_main_renderer);
+					(*it)->draw();
 				}	
 			}
 			SDL_RenderPresent(m_main_renderer);
 			m_last_frame = now;
+			post_update();
 		}
+
+		
 	}
 	std::cout << "Finished running mainloop." << std::endl;
 }
 
 
-
+void Mainclass::post_update(){
+	m_keymanager.update();
+}
 
 
 void Mainclass::setup_gameobjects(){
 	
 	
 	std::cout << "Setting up gameobjects..." << std::endl;
-	Gameobject * go = new Player();
-	go->visualcomponent()->load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
-	go->visualcomponent()->scale(4);
-	go->move(100,100);
-	m_gameobjects.push_back(go);
-	/*
-	for (int i = 0; i < 1000; ++i){
-		go = new StaticObject();
-		m_gameobjects.push_back(go);
-	}
-	*/
-	go = new StaticObject();
+	Player * player = new Player(this);
+	m_player = player;
+	player->visualcomponent()->load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
+	player->visualcomponent()->scale(4);
+	player->move(100,100);
+	m_gameobjects.push_back(player);
+
+	Gameobject * go = new StaticObject(this);
 	go->move_to(200,200);
 	go->visualcomponent()->load_spritesheet("media/stat.png", 32, 32, m_main_renderer);
 	go->visualcomponent()->scale(4);
 	m_gameobjects.push_back(go);
-	/*
-	*/
-	/*
-	go = new NPC();
+	std::cout << "Making npc" << std::endl; 
+	go = new NPC(this);
+	go->move_to(300,300);
 	go->visualcomponent()->load_spritesheet("media/npc.png", 32, 32, m_main_renderer);
-	go->setup_animations();
 	go->visualcomponent()->scale(4);
 	m_gameobjects.push_back(go);
-	*/
-	//m_gameobjects.push_back(std::unique_ptr<Gameobject> (new Player()));
-	//m_gameobjects[0]->visualcomponent()->
-	//m_gameobjects[0]->visualcomponent()->scale(5);
-	/*
-	Gameobject * g = new Player(this);
-	g->load_spritesheet("media/player_new.png");
-	g->move_to(100, 100);
-	g->scale(3.0f);
-	g->collider()->set_size(96,96);
-	m_gameobjects.push_back(g);
-	std::cout << "Player made" << std::endl;
-	
-	g = new Gameobject(this);
-	g->scale(0.5f);
-	g->move_to(40,40);
-	g->collider()->set_size(32, 32);
-	g->load_spritesheet("media/stat.png");
-	m_gameobjects.push_back(g);
-	std::cout << "Setup gameobjects end" << std::endl;
 
-	
-	*/
+
 	std::cout << "Finished setting up gameobjects." << std::endl;
 }
 
 
-void Mainclass::setup_keys(){
-/*
-	SDL_Scancode k;
-	m_keys[SDLK_a] = false;
-	m_keys[SDLK_w] = false;
-	m_keys[SDLK_s] = false;
-	m_keys[SDLK_d] = false;
-	m_keys[SDLK_RIGHT] = false;
-	m_keys[SDLK_LEFT] = false;
-	m_keys[SDLK_UP] = false;
-	m_keys[SDLK_DOWN] = false;
-	m_keys[SDLK_p] = false;
-	m_keys[SDLK_m] = false;
-*/
-}
+
 void Mainclass::update_keys(){
 	while(SDL_PollEvent(&m_main_event) != 0){ 
 		switch(m_main_event.type){
 			case SDL_QUIT:
-			m_running = false;
+				m_running = false;
 			break; 
 
 			case SDL_TEXTINPUT:
-			if(m_main_event.text.text[0] == 'q'){
-				m_running = false;
-			}
+				if(m_main_event.text.text[0] == 'q'){
+					m_running = false;
+				}
+			break;
 			case SDL_KEYUP:
-				keymanager.set(m_main_event.key.keysym.sym, false);
+				m_keymanager.set(m_main_event.key.keysym.sym, false);
 
 			break;
 			case SDL_KEYDOWN:
-				keymanager.set(m_main_event.key.keysym.sym, true);
-			//}
+				m_keymanager.set(m_main_event.key.keysym.sym, true);
 			break;
 		}
 	}
 }
 
-/*
 
-const std::vector<Gameobject> & Mainclass::gameobjects()const{
+bool Mainclass::start_event(const Event & event){
+	if(!m_event_ongoing){
+		m_current_event = event;
+		m_event_ongoing = true;
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+
+std::vector<Gameobject*> & Mainclass::gameobjects(){
 	return m_gameobjects;
 }
-bool Mainclass::key(int n){
-	if(m_keys.count(n) <= 0) m_keys[n] = false;
-	return m_keys.at(n);
+Keymanager & Mainclass::keymanager(){
+	return m_keymanager;
 }
-const SDL_Renderer * Mainclass::main_renderer()const{
+SDL_Renderer * Mainclass::main_renderer(){
 	return m_main_renderer;
 }
-*/
+Gameobject * Mainclass::player(){
+	return m_player;
+}

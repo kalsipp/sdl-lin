@@ -1,20 +1,30 @@
 #include "gameobject.hpp"
+#include "mainclass.hpp"
 
-Gameobject::Gameobject(){}
+Gameobject::Gameobject(Mainclass* mainclass):m_mainclass(mainclass){}
 Gameobject::Gameobject(const Gameobject &){}
 Gameobject::~Gameobject(){
-	if(m_visualcomponent != nullptr) delete m_visualcomponent;
-	if(m_collider != nullptr) delete m_collider;
-	if(m_interactioncomponent != nullptr) delete m_interactioncomponent;
-
-}
-
-void Gameobject::update(Keymanager & keys, const std::vector<Gameobject*> & gameobjects){
-}
-
-void Gameobject::draw(SDL_Renderer * main_renderer){
 	if(m_visualcomponent != nullptr){
-		m_visualcomponent->render(main_renderer, m_position);
+		delete m_visualcomponent;
+		m_visualcomponent = nullptr;
+	}
+	if(m_collider != nullptr){
+		delete m_collider;
+		m_collider = nullptr;
+	}
+	if(m_interactioncomponent != nullptr){
+		delete m_interactioncomponent;
+		m_interactioncomponent = nullptr;
+	}
+
+}
+
+void Gameobject::update(){
+}
+
+void Gameobject::draw(){
+	if(m_visualcomponent != nullptr){
+		m_visualcomponent->render(m_mainclass->main_renderer(), m_position);
 	}
 }
 

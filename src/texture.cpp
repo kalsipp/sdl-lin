@@ -57,8 +57,8 @@ void Texture::render(float x, float y, SDL_Renderer * main_renderer , SDL_Render
 	SDL_QueryTexture(m_my_texture, NULL, NULL, &width, &height);
 	int scalex = width*m_scale_x;
 	int scaley = height*m_scale_y;
-	int posx = round(x);
-	int posy = round(y);
+	int posx = round(x-scalex/2);
+	int posy = round(y-scaley/2);
 	SDL_Rect scalerect = {posx,posy,scalex, scaley};
 	//SDL_RenderCopy(m_main_renderer, m_my_texture, clip, &renderquad);
 	//SDL_Renderer * rend = const_cast<SDL_Renderer*>(m_main_renderer);

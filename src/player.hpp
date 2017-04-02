@@ -7,14 +7,15 @@
 #include "collider.hpp"
 class Player:public Gameobject{
 	public:
-		Player();
+		Player(Mainclass *);
 		~Player();
-		virtual void update(Keymanager & keys, const std::vector<Gameobject*> & gameobjects);
+		virtual void update();
 		virtual void setup_animations();
 	protected:
 		void update_animations();
-		void dynamic_movement(const std::pair<float,float> & movement, const std::vector<Gameobject*> & gameobjects);
-		void update_movement(Keymanager & keys, const std::vector<Gameobject*> & gameobjects);
+		void dynamic_movement(const std::pair<float,float> & movement);
+		void update_movement();
+		void check_event();
 		static const int ANIMATION_IDLE_UP;
 		static const int ANIMATION_IDLE_DOWN;
 		static const int ANIMATION_IDLE_RIGHT;

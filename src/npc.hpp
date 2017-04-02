@@ -2,11 +2,12 @@
 #include "gameobject.hpp"
 #include "interactioncomponent.hpp"
 #include "visualcomponent.hpp"
+class Mainclass;
 class NPC:public Gameobject{
 	public:
-		NPC();
+		NPC(Mainclass * );
 		~NPC();
-		virtual void update(Keymanager &, const std::vector<Gameobject*> & gameobjects);
+		virtual void update();
 		virtual void setup_animations();
 		virtual void setup_animations(const std::vector<Animation> &);
 	protected:

@@ -16,9 +16,7 @@ std::pair<float, float> Collider::size()const{
 	return std::make_pair(m_size_x, m_size_y);
 }
 
-Gameobject * Collider::parent(){
-	return m_parent;
-}
+
 
 void Collider::set_size(float x, float y){
 	m_size_x = x;
@@ -33,34 +31,29 @@ bool Collider::is_trigger(){
 	return m_trigger;
 }
 
-float Collider::x(){
-	return m_position->x()+m_offset.x();
-}
+
 float Collider::x()const{
-	return m_position->x()+m_offset.x();
-}
-float Collider::y(){
-	return m_position->y()+m_offset.y();
+	return m_position->x()+m_offset.x() - m_size_x/2;
 }
 
 float Collider::y()const{
-	return m_position->y()+m_offset.y();
+	return m_position->y()+m_offset.y() - m_size_y/2;
 }
 
 float Collider::right()const{
-	return x() + (m_size_x);
+	return x() + (m_size_x/2);
 }
 
 float Collider::left()const{
-	return x();//- (m_size_x/2);
+	return x()- (m_size_x/2);
 }
 
 float Collider::top()const{
-	return y();//+ (m_size_y/2);
+	return y()+ (m_size_y/2);
 }
 
 float Collider::bottom()const{
-	return y() - (m_size_y);
+	return y() - (m_size_y/2);
 }
 
 const Position & Collider::position()const{
@@ -68,8 +61,8 @@ const Position & Collider::position()const{
 }
 
 void Collider::render(SDL_Renderer * main_renderer){
-	int posx = round(x() + m_offset.x());
-	int posy = round(y() + m_offset.y());
+	int posx = round(x());
+	int posy = round(y());
 	int sizex = round(m_size_x);
 	int sizey = round(m_size_y);
 	SDL_Rect rekt = {posx, posy, sizex, sizey};

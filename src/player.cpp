@@ -1,5 +1,5 @@
 #include "player.hpp"
-
+#include "mainclass.hpp"
 
 const int Player::ANIMATION_IDLE_UP = 0;
 const int Player::ANIMATION_IDLE_DOWN = 1;
@@ -11,13 +11,14 @@ const int Player::ANIMATION_WALKING_RIGHT = 6;
 const int Player::ANIMATION_WALKING_LEFT = 7;
 
 
-Player::Player(){
+Player::Player(Mainclass * mainclass):Gameobject(mainclass){
 	//m_visualcomponent.reset((new VisualComponent()));
 	m_visualcomponent = new VisualComponent();
 	m_collider = new Collider(&m_position, 96, 128);
 	m_name = "Player";
 	//m_collider.reset(new Collider());
 	setup_animations();
+
 }
 
 Player::~Player(){
@@ -56,21 +57,34 @@ void Player::setup_animations(){
 		m_visualcomponent->add_animation(ANIMATION_WALKING_DOWN, a);
 	}
 }
-void Player::update(Keymanager & keys, const std::vector<Gameobject*> & gameobjects){
-	update_movement(keys, gameobjects);
+void Player::update(){
+	update_movement();
 	update_animations();
+	check_event();
 }
 
-void Player::update_movement(Keymanager & keys, const std::vector<Gameobject*> & gameobjects){
+void Player::check_event(){
+	if(m_mainclass->keymanager().key_down(SDLK_k)){
+		for(auto i = m_mainclass->gameobjects().begin(); i != m_mainclass->gameobjects().end(); ++i){
+			if((*i)->interactioncomponent() != nullptr){
+				if((*i)->interactioncomponent()->triggercollider()->collision_check(collider())){
+					(*i)->interactioncomponent()->trigger();
+				}
+			}
+		}
+	}
+}
+
+void Player::update_movement(){
 	std::pair<float,float> player_movement = {0,0};
 	//m_mainclass
-	if(keys.key(SDLK_a)) player_movement = {-m_movement_speed,0}; //m_player->move(-m_player->move_speed(),0);
-	if(keys.key(SDLK_s)) player_movement = {player_movement.first, player_movement.second + m_movement_speed};// m_player->move(0,m_player->move_speed());
-	if(keys.key(SDLK_w)) player_movement = {player_movement.first, player_movement.second - m_movement_speed};//m_player->move(0, -m_player->move_speed());
-	if(keys.key(SDLK_d)) player_movement = {player_movement.first + m_movement_speed, player_movement.second};//m_player->move(m_player->move_speed(), 0);
+	if(m_mainclass->keymanager().key(SDLK_a)) player_movement = {-m_movement_speed,0}; //m_player->move(-m_player->move_speed(),0);
+	if(m_mainclass->keymanager().key(SDLK_s)) player_movement = {player_movement.first, player_movement.second + m_movement_speed};// m_player->move(0,m_player->move_speed());
+	if(m_mainclass->keymanager().key(SDLK_w)) player_movement = {player_movement.first, player_movement.second - m_movement_speed};//m_player->move(0, -m_player->move_speed());
+	if(m_mainclass->keymanager().key(SDLK_d)) player_movement = {player_movement.first + m_movement_speed, player_movement.second};//m_player->move(m_player->move_speed(), 0);
 	//m_position.x() += player_movement.first;
 	//m_position.y() += player_movement.second;
-	dynamic_movement(player_movement, gameobjects);
+	dynamic_movement(player_movement);
 }
 void Player::update_animations(){
 
@@ -101,26 +115,26 @@ void Player::update_animations(){
 	}
 		
 }
-void Player::dynamic_movement(const std::pair<float,float> & movement, const std::vector<Gameobject*> & gameobjects){
-	Gameobject * mover = this;
+void Player::dynamic_movement(const std::pair<float,float> & movement){
+	
 	//std::unique_ptr<Gameobject> mover(this);
-	m_diff_movement = mover->position();
-	mover->move(movement.first, movement.second);
-	for(auto it = gameobjects.begin(); it != gameobjects.end(); ++it){
-		if((*it) != mover){
-			if((*it)->collider()->collision_check(mover->collider())){ //If we have collision
-				mover->move(-movement.first, 0); 
-				if((*it)->collider()->collision_check(mover->collider())){ //If we go back x and it's not ok
-					mover->move(movement.first, -movement.second); //We reset x and try going back y
-					if((*it)->collider()->collision_check(mover->collider())){ //If this didn't work just back both
-						mover->move(-movement.first, 0);
+	m_diff_movement = position();
+	move(movement.first, movement.second);
+	for(auto it = m_mainclass->gameobjects().begin(); it != m_mainclass->gameobjects().end(); ++it){
+		if((*it) != this){
+			if((*it)->collider()->collision_check(collider())){ //If we have collision
+				move(-movement.first, 0); 
+				if((*it)->collider()->collision_check(collider())){ //If we go back x and it's not ok
+					move(movement.first, -movement.second); //We reset x and try going back y
+					if((*it)->collider()->collision_check(collider())){ //If this didn't work just back both
+						move(-movement.first, 0);
 					}
 				}
 			}
 		}
 	}
 
-	m_diff_movement.subtract(mover->position());
+	m_diff_movement.subtract(position());
 }
 
 
