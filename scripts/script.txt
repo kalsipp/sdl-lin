@@ -1,4 +1,24 @@
-ur mum smels
-smels v bad
-and ur also a bad
-lmao
+lock player
+open conversation
+setface media/happyface.png
+line dude Hello world
+setface media/angryface.png
+line dude this makes me upset
+giveitem 42
+linegiveitem 42
+close conversation
+unlock player
+$
+lock player
+open conversation
+setface media/annoyed.png
+line dude pls go away
+close conversation 
+unlock player
+$
+lock player
+open conversation
+setface media/angry.png
+line dude I said go away
+close conversation
+unlock player

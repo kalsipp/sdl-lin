@@ -16,6 +16,7 @@ class InteractionComponent{
 		bool triggered();
 		void trigger();
 	private:
+		std::string decrypt(const std::string & instring);
 		Collider * m_triggercollider = nullptr;
 		bool m_triggered = false;
 		std::queue<Event> m_events;

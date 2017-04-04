@@ -10,10 +10,10 @@ Collider::Collider(const Position * refpos, const Position & offset, float size_
 
 
 std::pair<float, float> Collider::size(){
-	return std::make_pair(m_size_x, m_size_y);
+	return std::make_pair(size_x(), size_y());
 }
 std::pair<float, float> Collider::size()const{
-	return std::make_pair(m_size_x, m_size_y);
+	return std::make_pair(size_x(), size_y());
 }
 
 
@@ -31,29 +31,40 @@ bool Collider::is_trigger(){
 	return m_trigger;
 }
 
-
+void Collider::enable(bool n){
+	m_enabled = n;
+}
+float Collider::size_x()const{
+	return m_size_x*m_scale;
+}
+float Collider::size_y()const{
+	return m_size_y*m_scale;
+}
+void Collider::scale(float x){
+	m_scale = x;
+}
 float Collider::x()const{
-	return m_position->x()+m_offset.x() - m_size_x/2;
+	return m_position->x()+m_offset.x() - size_x()/2;
 }
 
 float Collider::y()const{
-	return m_position->y()+m_offset.y() - m_size_y/2;
+	return m_position->y()+m_offset.y() - size_y()/2;
 }
 
 float Collider::right()const{
-	return x() + (m_size_x/2);
+	return x() + (size_x()/2);
 }
 
 float Collider::left()const{
-	return x()- (m_size_x/2);
+	return x()- (size_x()/2);
 }
 
 float Collider::top()const{
-	return y()+ (m_size_y/2);
+	return y()+ (size_y()/2);
 }
 
 float Collider::bottom()const{
-	return y() - (m_size_y/2);
+	return y() - (size_y()/2);
 }
 
 const Position & Collider::position()const{
@@ -63,8 +74,8 @@ const Position & Collider::position()const{
 void Collider::render(SDL_Renderer * main_renderer){
 	int posx = round(x());
 	int posy = round(y());
-	int sizex = round(m_size_x);
-	int sizey = round(m_size_y);
+	int sizex = round(size_x());
+	int sizey = round(size_y());
 	SDL_Rect rekt = {posx, posy, sizex, sizey};
 	SDL_RenderDrawRect(main_renderer, &rekt);  
 }

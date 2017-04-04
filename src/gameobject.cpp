@@ -35,6 +35,7 @@ const Position & Gameobject::position()const{
 	return m_position;
 }
 bool Gameobject::operator< (const Gameobject& right)const{
+	std::cout << "HUT" << std::endl;
 	return position().z() < right.position().z(); 
 }
 

@@ -28,6 +28,10 @@ public:
 	const Position & position()const;
 	float x()const;
 	float y()const;
+	void enable(bool);
+	void scale(float x);
+	float size_x()const;
+	float size_y()const;
 	float right()const;
 	float left()const;
 	float top()const;
@@ -40,5 +44,6 @@ private:
 	bool m_trigger = false;
 	float m_size_x = 32;
 	float m_size_y = 32;
-	bool m_enabled = false;
+	float m_scale = 1;
+	bool m_enabled = true;
 };

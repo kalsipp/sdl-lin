@@ -1,5 +1,10 @@
 #include "mainclass.hpp"
 
+bool gameobject_sort(Gameobject * a, Gameobject * b){
+	return a->position().z() < b->position().z();
+}
+
+
 Mainclass::Mainclass(){
 	std::cout << "Initalizing mainclass..." << std::endl;
 	//Initialize SDL
@@ -95,7 +100,7 @@ void Mainclass::run(){
 
 		//Rendering
 		if(diff.count() > m_frame_delay){
-			std::sort(m_gameobjects.begin(), m_gameobjects.end());
+			std::sort(m_gameobjects.begin(), m_gameobjects.end(), gameobject_sort);
 			SDL_SetRenderDrawColor(m_main_renderer, 0, 0, 0, 1);
 			SDL_RenderClear(m_main_renderer);
 			for (auto it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
@@ -137,21 +142,39 @@ void Mainclass::setup_gameobjects(){
 	m_player = player;
 	player->visualcomponent()->load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
 	player->visualcomponent()->scale(4);
-	player->move(100,100);
+	player->move(70,70);
 	m_gameobjects.push_back(player);
 
 	Gameobject * go = new StaticObject(this);
 	go->move_to(200,200);
 	go->visualcomponent()->load_spritesheet("media/stat.png", 32, 32, m_main_renderer);
 	go->visualcomponent()->scale(4);
+	go->collider()->scale(4);
 	m_gameobjects.push_back(go);
-	std::cout << "Making npc" << std::endl; 
+
 	go = new NPC(this);
 	go->move_to(300,300);
 	go->visualcomponent()->load_spritesheet("media/npc.png", 32, 32, m_main_renderer);
 	go->visualcomponent()->scale(4);
 	m_gameobjects.push_back(go);
 
+	go = new StaticObject(this);
+	go->move_to(100,500);
+	go->visualcomponent()->load_spritesheet("media/stat.png", 32, 32, m_main_renderer);
+	go->visualcomponent()->scale(2);
+	go->collider()->scale(2);
+	go->collider()->enable(false);
+	go->position().z() = 10;
+	m_gameobjects.push_back(go);
+
+	go = new StaticObject(this);
+	go->move_to(90,510);
+	go->visualcomponent()->load_spritesheet("media/stat.png", 32, 32, m_main_renderer);
+	go->visualcomponent()->scale(2);
+	go->collider()->scale(2);
+	go->collider()->enable(false);
+	go->position().z() = -10;
+	m_gameobjects.push_back(go);
 
 	std::cout << "Finished setting up gameobjects." << std::endl;
 }
@@ -206,3 +229,4 @@ SDL_Renderer * Mainclass::main_renderer(){
 Gameobject * Mainclass::player(){
 	return m_player;
 }
+
