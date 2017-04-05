@@ -36,7 +36,7 @@ public:
 	float left()const;
 	float top()const;
 	float bottom()const;
-	void render(SDL_Renderer * main_renderer);
+	void render(SDL_Renderer * main_renderer, const Position &);
 private:
 	//Gameobject * m_parent = nullptr;
 	const Position * m_position; //points to parent's position. 

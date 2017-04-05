@@ -3,7 +3,7 @@
 #include "mainclass.hpp"
 InteractionComponent::InteractionComponent(const Collider & refcollider){
 	m_triggercollider = new Collider(refcollider);
-	load_event("scripts/script.scr");
+	//load_event("scripts/script.scr");
 }
 
 InteractionComponent::~InteractionComponent(){

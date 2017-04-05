@@ -5,7 +5,6 @@
 #include <chrono>
 #include "position.hpp"
 #include "texture.hpp"
-#include "component.hpp"
 
 
 struct Animation{
@@ -32,6 +31,7 @@ public:
 	void render(SDL_Renderer * , const Position &);
 	bool & enabled();
 	bool load_spritesheet(const std::string & path, int sprite_width, int sprite_height, SDL_Renderer * main_renderer);
+	bool load_text(std::string text, TTF_Font * font, SDL_Renderer * main_renderer);
 	void scale(const int & x);
 private:
 	bool m_enabled = false;
@@ -40,6 +40,5 @@ private:
 	std::chrono::time_point<std::chrono::high_resolution_clock> m_last_animation;
 	std::map<int, Animation> m_animations;
 	std::vector<Texture*> m_textures;
-	SDL_Texture * m_texture = NULL;
-	
+	Texture * m_text_texture = nullptr;
 };

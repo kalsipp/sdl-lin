@@ -97,28 +97,24 @@ void Mainclass::run(){
 			m_event_ongoing = (m_current_event.update(this));
 		}
 
-
+	
 		//Rendering
 		if(diff.count() > m_frame_delay){
-			std::sort(m_gameobjects.begin(), m_gameobjects.end(), gameobject_sort);
-			SDL_SetRenderDrawColor(m_main_renderer, 0, 0, 0, 1);
-			SDL_RenderClear(m_main_renderer);
-			for (auto it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
-			{
-				if(!m_event_ongoing){
-					(*it)->update(); //Update gameobjects
-				}
-
-				if(debug_show_colliders){
-					SDL_SetRenderDrawColor(m_main_renderer, 255, 255, 255, 255);
-					if((*it)->collider() != nullptr)(*it)->collider()->render(m_main_renderer);
-					SDL_SetRenderDrawColor(m_main_renderer, 255, 0,0,255);
-					if((*it)->interactioncomponent() != nullptr) (*it)->interactioncomponent()->triggercollider()->render(m_main_renderer);
-				}else{
-					(*it)->draw();
-				}	
+			Position refpos = player()->position()-world_position();
+			if(refpos.x() > m_screen_width*0.75f){
+				m_world_position.add(refpos.x()-m_screen_width*0.75f,0,0);
 			}
-			SDL_RenderPresent(m_main_renderer);
+			if(refpos.x() < m_screen_width*0.25f){
+				m_world_position.subtract(-refpos.x()+m_screen_width*0.25f,0,0);
+			}
+			if(refpos.y() > m_screen_height*0.75f){
+				m_world_position.add(0,refpos.y()-m_screen_height*0.75f,0);
+			}
+			if(refpos.y() < m_screen_height*0.25f){
+				m_world_position.subtract(0,-refpos.y()+m_screen_height*0.25f,0);
+			}
+			
+			render();
 			m_last_frame = now;
 			post_update();
 		}
@@ -128,6 +124,31 @@ void Mainclass::run(){
 	std::cout << "Finished running mainloop." << std::endl;
 }
 
+void Mainclass::render(){
+
+	std::sort(m_gameobjects.begin(), m_gameobjects.end(), gameobject_sort);
+	SDL_SetRenderDrawColor(m_main_renderer, 0, 0, 0, 1);
+	SDL_RenderClear(m_main_renderer);
+	for (auto it = m_gameobjects.begin(); it != m_gameobjects.end(); ++it)
+	{
+		if(!m_event_ongoing){
+			//std::cout << "Hoi" << std::endl;
+			(*it)->update(); //Update gameobjects
+		}
+
+		if(debug_show_colliders){
+			SDL_SetRenderDrawColor(m_main_renderer, 255, 255, 255, 255);
+
+			if((*it)->collider() != nullptr)(*it)->collider()->render(m_main_renderer, world_position());
+			SDL_SetRenderDrawColor(m_main_renderer, 255, 0,0,255);
+			if((*it)->interactioncomponent() != nullptr) (*it)->interactioncomponent()->triggercollider()->render(m_main_renderer, world_position());
+		}else{
+			(*it)->draw();
+		}	
+	}
+	SDL_RenderPresent(m_main_renderer);
+
+}
 
 void Mainclass::post_update(){
 	m_keymanager.update();
@@ -135,9 +156,53 @@ void Mainclass::post_update(){
 
 
 void Mainclass::setup_gameobjects(){
-	
-	
 	std::cout << "Setting up gameobjects..." << std::endl;
+	std::string filename = "levels/level.txt";
+	std::ifstream infile(filename.c_str());
+	std::stringstream buffer;
+	buffer << infile.rdbuf();
+	Gameobject * wip_gameobject = nullptr; 
+	std::string line;
+	std::string::size_type sz;
+	while(std::getline(buffer, line)){
+		//std::cout << std::endl << line << std::endl;
+		//line = trim(line);
+		std::vector<std::string> args = split_by_delimiter(line, ' ');
+		if(line[0] == '#'){
+			//Do nothing lmao
+		}else if(line[0] == '$'){ //New event, save old, make new
+			//std::cout << "Saving gameobject" << std::endl;
+			m_gameobjects.push_back(wip_gameobject);
+		}else if(line == "Staticobject"){
+			//std::cout << "Making staticobject" << std::endl;
+			wip_gameobject = new StaticObject(this);
+		}else if(line == "Player"){
+			//std::cout << "Making Player" << std::endl;
+			m_player = new Player(this);
+			wip_gameobject = m_player;
+		}else if(line == "NPC"){
+			//std::cout << "Making NPC" << std::endl;
+			wip_gameobject = new NPC(this);
+		}else if(args[0] == "spritesheet"){
+			//std::cout << "Adding spritesheet" << std::endl;
+			int sizex = std::stoi(args[2], &sz);
+			int sizey = std::stoi(args[3], &sz);
+			wip_gameobject->visualcomponent()->load_spritesheet(args[1], sizex, sizey, m_main_renderer);
+		}else if(args[0] == "pos"){
+			//std::cout << "setting pos" << std::endl;
+			int posx = std::stoi(args[1], &sz);
+			int posy = std::stoi(args[2], &sz);
+			wip_gameobject->move_to(posx, posy);
+		}else if(args[0] == "scale"){
+			//std::cout << "Scaling" << std::endl;
+			int scale = std::stoi(args[1], &sz);
+			wip_gameobject->scale(scale);
+		}else if(args[0] == "event"){
+			wip_gameobject->interactioncomponent()->load_event(args[1]);
+		
+		}
+	}
+	/*
 	Player * player = new Player(this);
 	m_player = player;
 	player->visualcomponent()->load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
@@ -155,6 +220,7 @@ void Mainclass::setup_gameobjects(){
 	go = new NPC(this);
 	go->move_to(300,300);
 	go->visualcomponent()->load_spritesheet("media/npc.png", 32, 32, m_main_renderer);
+	go->interactioncomponent()->load_event("scripts/script.scr");
 	go->visualcomponent()->scale(4);
 	m_gameobjects.push_back(go);
 
@@ -175,7 +241,9 @@ void Mainclass::setup_gameobjects(){
 	go->collider()->enable(false);
 	go->position().z() = -10;
 	m_gameobjects.push_back(go);
-
+	*/	
+	/*
+	*/
 	std::cout << "Finished setting up gameobjects." << std::endl;
 }
 
@@ -200,6 +268,12 @@ void Mainclass::update_keys(){
 			case SDL_KEYDOWN:
 				m_keymanager.set(m_main_event.key.keysym.sym, true);
 			break;
+			case SDL_MOUSEBUTTONDOWN:
+				m_keymanager.set_mouse(true);
+			break;
+			case SDL_MOUSEBUTTONUP:
+				m_keymanager.set_mouse(false);
+			break;
 		}
 	}
 }
@@ -215,7 +289,34 @@ bool Mainclass::start_event(const Event & event){
 	}
 }
 
+std::vector<std::string> Mainclass::split_by_delimiter(const std::string & in, char delimiter){
+	std::vector<std::string> out; 
+	std::string in_work;
 
+	for(unsigned int i = 0; i < in.size(); ++i){
+		if(in[i] != delimiter){
+		in_work.push_back(in[i]);
+		}else{
+			out.push_back(in_work);
+			in_work = "";
+		}
+	}
+	out.push_back(in_work);
+	return out;
+}
+
+std::string Mainclass::trim(const std::string& str,
+                 const std::string& whitespace)
+{
+    const auto strBegin = str.find_first_not_of(whitespace);
+    if (strBegin == std::string::npos)
+        return ""; // no content
+
+    const auto strEnd = str.find_last_not_of(whitespace);
+    const auto strRange = strEnd - strBegin + 1;
+
+    return str.substr(strBegin, strRange);
+}
 
 std::vector<Gameobject*> & Mainclass::gameobjects(){
 	return m_gameobjects;
@@ -230,3 +331,6 @@ Gameobject * Mainclass::player(){
 	return m_player;
 }
 
+const Position & Mainclass::world_position(){
+	return m_world_position;
+}

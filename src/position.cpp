@@ -21,6 +21,14 @@ void Position::set(const Position & pos){
 	m_y = pos.y();
 	m_z = pos.z();
 }
+
+void Position::set(const float & x, const float & y, const float & z){
+	m_x = x;
+	m_y = y;
+	m_z = z;
+}
+
+
 float & Position::x(){
 	return m_x;
 }
@@ -45,8 +53,26 @@ void Position::subtract(const Position & other){
 	z() -= other.z();
 }
 
-
-
+void Position::subtract(const float & xn, const float & yn, const float &zn){
+	x() -= xn;
+	y() -= yn;
+	z() -= zn;
+}
+void Position::add(const Position & other){
+	x() += other.x();
+	y() += other.y();
+	z() -= other.z();
+}
+void Position::add(const float & xn, const float& yn, const float& zn){
+	x() += xn;
+	y() += yn;
+	z() += zn;
+}
+Position Position::operator-(const Position &other){
+	Position k(*this);
+	k.subtract(other);
+	return k;
+}
 void Position::rotate_around(const Position & rot, const Position & origin){
 	rotate_around(rot.x(), rot.y(), rot.z(), origin);
 }

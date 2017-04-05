@@ -9,6 +9,7 @@
 #include "interactioncomponent.hpp"
 #include "position.hpp"
 
+
 class Mainclass;
 class Gameobject{
 public:
@@ -22,6 +23,7 @@ public:
 	virtual void move(float,float);
 	virtual void move_to(float,float);
 	virtual void setup_animations(){}
+	virtual void scale(float x);
 	const std::string & name();
 	virtual void setup_animations(const std::vector<Animation> &){}
 	virtual void triggered(Gameobject *){}

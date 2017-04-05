@@ -5,5 +5,6 @@
 class StaticObject:public Gameobject{
 public:
 	StaticObject(Mainclass * );	
+	virtual ~StaticObject(){}
 private:
 };

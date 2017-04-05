@@ -71,9 +71,9 @@ const Position & Collider::position()const{
 	return *m_position;
 }
 
-void Collider::render(SDL_Renderer * main_renderer){
-	int posx = round(x());
-	int posy = round(y());
+void Collider::render(SDL_Renderer * main_renderer, const Position & refpos){
+	int posx = round(x() - refpos.x());
+	int posy = round(y()- refpos.y());
 	int sizex = round(size_x());
 	int sizey = round(size_y());
 	SDL_Rect rekt = {posx, posy, sizex, sizey};

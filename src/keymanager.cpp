@@ -37,11 +37,25 @@ bool Keymanager::key_down(int key){
 	m_keys_down[key] = false;
 	return false;
 }
+void Keymanager::set_mouse(bool val){
+	if(m_mouse_state != val){
+		m_mouse_down = val;
+	}
+	m_mouse_state = val;
+}
+
+bool Keymanager::mouse(){
+	return m_mouse_state;
+}
+bool Keymanager::mouse_down(){
+	return m_mouse_down;
+}
 
 void Keymanager::update(){
 	for(auto i = m_keys.begin(); i != m_keys.end(); ++i){
 		m_keys_down[i->first] = false;
 	}
+	m_mouse_down = false;
 }
 
 bool Keymanager::key(int key){

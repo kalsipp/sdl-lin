@@ -1,0 +1,16 @@
+Staticobject
+pos 200 200
+spritesheet media/stat.png 32 32
+scale 1
+$
+Player
+pos 400 400
+spritesheet media/player_new.png 32 32
+scale 4
+$
+NPC
+pos 300 200
+spritesheet media/npc.png 32 32
+scale 4
+event scripts/script.scr
+$

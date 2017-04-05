@@ -14,9 +14,12 @@ Texture::~Texture(){
 }
 
 bool Texture::load_image_from_surface(SDL_Surface * new_surf, SDL_Renderer * main_renderer){
+	if(m_my_texture != NULL) SDL_DestroyTexture(m_my_texture);
 	m_my_texture = SDL_CreateTextureFromSurface(main_renderer, new_surf);
 	return m_my_texture != NULL;
 }
+
+
 /*
 bool Texture::load_image_from_file(const std::string & path, SDL_Renderer * main_renderer){
 	m_source_path = path; 

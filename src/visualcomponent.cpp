@@ -40,6 +40,7 @@ VisualComponent::~VisualComponent(){
 	for (auto i = m_textures.begin(); i != m_textures.end(); ++i){
 		delete *i;
 	}
+	if(m_text_texture != nullptr) delete m_text_texture;
 }
 
 void VisualComponent::add_animation(unsigned int key, const Animation& new_anim){
@@ -52,6 +53,9 @@ unsigned int VisualComponent::current_animation(){
 	return m_current_animation;
 }
 void VisualComponent::render(SDL_Renderer* main_renderer, const Position & position){
+	if(m_text_texture != nullptr) m_text_texture->render(position.x(), position.y(), main_renderer);
+
+	if(m_textures.size() == 0) return;	
 	std::chrono::time_point<std::chrono::high_resolution_clock> now = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double> diff = now-m_last_animation;
 	std::chrono::milliseconds diff_ms = std::chrono::duration_cast<std::chrono::milliseconds>(diff);
@@ -65,11 +69,7 @@ void VisualComponent::render(SDL_Renderer* main_renderer, const Position & posit
 	assert(m_animations[m_current_animation].get_current_frame() < m_textures.size() && "The attempted frame/texture does not exist");
 	
 	m_textures[m_animations[m_current_animation].get_current_frame()]->render(position.x(), position.y(), main_renderer);
-	SDL_RenderCopyEx(main_renderer, m_texture, NULL, NULL, 0, NULL, SDL_FLIP_NONE);
-	/*
-	SDL_Texture * k = m_texture;
-	SDL_RenderCopy(main_renderer, m_texture, NULL, NULL);
-	*/
+
 }
 
 
@@ -89,14 +89,28 @@ bool VisualComponent::load_spritesheet(const std::string & path, int sprite_widt
 	return m_texture != NULL;
 }
 */
+bool VisualComponent::load_text(std::string text, TTF_Font * font, SDL_Renderer * main_renderer){
+	SDL_Color color = {255,255,255,255};
+	SDL_Surface * textsurface = TTF_RenderText_Solid(font, text.c_str(), color);
+	if(textsurface == NULL){
+		std::cout << "Unable to render text surface! SDL_Ttf error: " << TTF_GetError() << std::endl;
+	}else{
+		
+		if(m_text_texture == nullptr) m_text_texture = new Texture();
+		m_text_texture->load_image_from_surface(textsurface, main_renderer);
+		//m_text_texture = SDL_CreateTextureFromSurface(main_renderer, textsurface);
+		SDL_FreeSurface(textsurface);
+	}
+	return m_text_texture != NULL;
+}
+
 bool VisualComponent::load_spritesheet(const std::string & path, int sprite_width, int sprite_height, SDL_Renderer * main_renderer){ 
+	//std::cout << "Loading VS with " << path << " of size " << sprite_width << "x" << sprite_height << std::endl;
 	SDL_Surface * full_sheet = NULL;
 	full_sheet = IMG_Load(path.c_str());
-	
-
 	bool success = true;
 	if(full_sheet == NULL){
-		//std::cout << "Spritesheet Unable to load image " << path << " SDL Error: " << SDL_GetError() << "." << std::endl;
+		std::cout << "Spritesheet Unable to load image " << path << " SDL Error: " << SDL_GetError() << "." << std::endl;
 		success = false;
 	}else{
 		assert(full_sheet->w%sprite_width == 0 && full_sheet->h%sprite_height==0);

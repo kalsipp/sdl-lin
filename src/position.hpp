@@ -13,13 +13,17 @@ class Position{
 		Position(float x, float y, float z = 0); //z is not always relevant
 		Position(std::initializer_list<float>);
 		void set(const Position &);
+		void set(const float &, const float &, const float & z = 0);
 		void rotateXZ(float);
 		void rotateYZ(float);
 		void rotateXY(float);
+		void add(const Position & other);
+		void add(const float &, const float&, const float&);
 		void subtract(const Position & other);
-		void add(float x = 0, float y = 0, float z = 0);
+		void subtract(const float &, const float &, const float &);
 		void rotate_around(const Position & rot, const Position & origin);
 		void rotate_around(float yz, float xz, float xy, const Position & origin);
+		Position operator-(const Position &);
 		float & x();
 		float x()const;
 		float & y();

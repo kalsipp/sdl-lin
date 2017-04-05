@@ -14,6 +14,7 @@
 #include "player.hpp"
 #include "keymanager.hpp"
 #include "npc.hpp"
+#include "collider.hpp"
 /*
 #include "texture.hpp"
 
@@ -27,21 +28,25 @@
 //class Gameobject;
 
 class Mainclass{
-public:
+public: 
 	Mainclass();
-	~Mainclass();
+	virtual ~Mainclass();
 	void run();
 	std::vector<Gameobject*> & gameobjects();
 	Keymanager & keymanager();
 	SDL_Renderer * main_renderer();
 	Gameobject * player();
+	const Position & world_position();
 	bool start_event(const Event &); //return true if event started.
 
 
-private:	
+protected:	
+	std::vector<std::string> split_by_delimiter(const std::string & in, char delimiter);
+	std::string trim(const std::string& str, const std::string& whitespace = " \t");
 	void setup_gameobjects(); //Generate gameobjects for the current map
 	void update_keys();
 	void post_update();
+	void render();
 	float m_frame_delay = 1/60;
 	std::chrono::time_point<std::chrono::high_resolution_clock> m_last_frame;
 
@@ -49,6 +54,7 @@ private:
 	SDL_Surface * m_main_surface = NULL;
 	SDL_Renderer * m_main_renderer = NULL;
 	Player * m_player = nullptr;
+	Position m_world_position;
 	int m_screen_height = 640;
 	int m_screen_width = 480;
 	bool m_init_ok = true;

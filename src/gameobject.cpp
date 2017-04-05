@@ -24,7 +24,9 @@ void Gameobject::update(){
 
 void Gameobject::draw(){
 	if(m_visualcomponent != nullptr){
-		m_visualcomponent->render(m_mainclass->main_renderer(), m_position);
+		Position p(m_position);
+		p.subtract(m_mainclass->world_position());
+		m_visualcomponent->render(m_mainclass->main_renderer(), p);
 	}
 }
 
@@ -46,7 +48,17 @@ VisualComponent * Gameobject::visualcomponent(){
 InteractionComponent * Gameobject::interactioncomponent(){
 	return m_interactioncomponent;
 }
-
+void Gameobject::scale(float x){
+	if(m_collider != nullptr){
+		m_collider->scale(x/4);
+	}
+	if(m_visualcomponent != nullptr){
+		m_visualcomponent->scale(x);
+	}
+	if(m_interactioncomponent != nullptr){
+		m_interactioncomponent->triggercollider()->scale(x/4);
+	}
+}
 Collider * Gameobject::collider(){
 	return m_collider;
 }
