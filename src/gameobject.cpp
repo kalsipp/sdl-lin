@@ -16,7 +16,6 @@ Gameobject::~Gameobject(){
 		delete m_interactioncomponent;
 		m_interactioncomponent = nullptr;
 	}
-
 }
 
 void Gameobject::update(){
@@ -81,11 +80,3 @@ void Gameobject::set_world_relative(bool val){
 bool & Gameobject::enabled(){
 	return m_enabled;
 }
-/*
-Collider & Gameobject::collider(){
-	return *m_collider;
-}
-const Collider & Gameobject::collider()const{
-	return *m_collider;
-}
-*/

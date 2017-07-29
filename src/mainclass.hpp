@@ -15,6 +15,7 @@
 #include "keymanager.hpp"
 #include "npc.hpp"
 #include "collider.hpp"
+#include "graphicsmanager.hpp"
 /*
 #include "texture.hpp"
 
@@ -51,9 +52,7 @@ protected:
 	float m_frame_delay = 1/60;
 	std::chrono::time_point<std::chrono::high_resolution_clock> m_last_frame;
 
-	SDL_Window * m_main_window = NULL;
-	SDL_Surface * m_main_surface = NULL;
-	SDL_Renderer * m_main_renderer = NULL;
+
 	Player * m_player = nullptr;
 	Position m_world_position;
 	int m_screen_height = 768;
