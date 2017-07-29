@@ -64,3 +64,12 @@ bool Keymanager::key(int key){
 	m_keys[key] = false;
 	return false;
 }
+void Keymanager::text_input(const std::string & text){
+	m_textinput += text;
+}
+std::string Keymanager::get_text(){
+	return m_textinput;
+}
+void Keymanager::reset_text(){
+	m_textinput = "";
+}

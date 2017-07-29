@@ -1,0 +1,23 @@
+Ability to quickly add and remove gameobjects from scene. Ability to modify parameters in gameobject. 
+
+With no game object selected the scene just animates 
+If a gameobject is clicked on it sticks to the mouse and may be moved around
+If the mouse clicks again the gameobject followung the mouse gets placed. 
+If i press 1-9 this places the gameobject as if I clicked. Then a new gameobject of type (1 = staticobject, 2 = npc, 3 = player) and gets attached to the mouse. 
+If I press delete whilst a gameobject is selected it gets removed. 
+
+If I press e whilst a gameobject is selected it brings up an editor menu. 
+If I had a gameobject in hand it stops following my mouse. 
+This menu has a row for each modifyable parameter in each object. 
+Scale, Spritesheet, eventscript. 
+It depends on which gameobject it is. If the item does not have an interactioncomponent then it will not query for eventscript. 
+Each editor row will show the current value for the gameobject.
+The cursor will be placed at the end of the text of the first entry. 
+If I then type I will modify the text in place. I may not move the cursor, just delete and add text. 
+
+If I press enter I will move to the next field. If I press tab I will move to the previous field. 
+If I press enter in the last field I will be finished. This will exit edit mode.
+If I press esc whenever this will exit edit mode. 
+
+If I press a gameobject whilst in edit mode I will drop the gameobject I had on the ground. The new gameobject will become my held object. The fields gets modified to accomodate that gameobject. The cursor will be moved to the first field. 
+

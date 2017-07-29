@@ -23,9 +23,10 @@ void Gameobject::update(){
 }
 
 void Gameobject::draw(){
+	if(!m_enabled) return;
 	if(m_visualcomponent != nullptr){
 		Position p(m_position);
-		p.subtract(m_mainclass->world_position());
+		if(position_world_relative)p.subtract(m_mainclass->world_position());
 		m_visualcomponent->render(m_mainclass->main_renderer(), p);
 	}
 }
@@ -74,7 +75,12 @@ void Gameobject::move_to(float x,float y){
 	m_position.y() = y;
 }
 
-
+void Gameobject::set_world_relative(bool val){
+	position_world_relative = val;
+}
+bool & Gameobject::enabled(){
+	return m_enabled;
+}
 /*
 Collider & Gameobject::collider(){
 	return *m_collider;

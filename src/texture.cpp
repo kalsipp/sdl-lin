@@ -52,16 +52,23 @@ void Texture::scale(float x, float y){
 
 
 
-void Texture::render(float x, float y, SDL_Renderer * main_renderer , SDL_RendererFlip fliptype){
+void Texture::render(float x, float y, SDL_Renderer * main_renderer, bool centered, SDL_RendererFlip fliptype){
 
 	//std::cout << "x " << x << " y " << y << " width " << m_my_surface->w << " height " << m_my_surface->h << std::endl;
 	int width = 0;
 	int height = 0;
 	SDL_QueryTexture(m_my_texture, NULL, NULL, &width, &height);
+	int posx = 0;
+	int posy = 0;
 	int scalex = width*m_scale_x;
 	int scaley = height*m_scale_y;
-	int posx = round(x-scalex/2);
-	int posy = round(y-scaley/2);
+	if(centered){
+		posx = round(x-scalex/2);
+		posy = round(y-scaley/2);
+	}else{
+		posx = round(x);
+		posy = round(y);
+	}
 	SDL_Rect scalerect = {posx,posy,scalex, scaley};
 	//SDL_RenderCopy(m_main_renderer, m_my_texture, clip, &renderquad);
 	//SDL_Renderer * rend = const_cast<SDL_Renderer*>(m_main_renderer);

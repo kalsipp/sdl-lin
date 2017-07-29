@@ -16,7 +16,7 @@ public:
 	Texture();
 	~Texture();
 	Texture(const Texture &);
-	void render(float x, float y, SDL_Renderer *, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void render(float x, float y, SDL_Renderer *, bool centered = true, SDL_RendererFlip flip = SDL_FLIP_NONE);
 	void scale(float x, float y);
 	bool load_image_from_surface(SDL_Surface *, SDL_Renderer *);
 	//bool load_image_from_file(const std::string & path, SDL_Renderer*);

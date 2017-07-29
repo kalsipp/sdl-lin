@@ -123,7 +123,6 @@ bool Collider::collision_check(const Collider * other){
 	if(!m_enabled) return false;
 	if(other ==  nullptr) return false;
 	//std::cout << "HUr" << std::endl;
-	
 	//if() std::cout  << "horizontally" << std::endl;
 	//if() std::cout << "vertically" << std::endl;
 	//if(!(left() < other.right() || right() > other.left())) std::cout  << "horizontally" << std::endl;

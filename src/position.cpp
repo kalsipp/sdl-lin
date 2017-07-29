@@ -13,7 +13,7 @@ Position::Position(std::initializer_list<float> n){
 	m_z = p[2];
 }
 
-Position::Position(float x, float y, float z): m_x(x), m_y(y), m_z(z){}
+Position::Position(float n_x, float n_y, float n_z): m_x(n_x), m_y(n_y), m_z(n_z){}
 
 
 void Position::set(const Position & pos){
@@ -22,10 +22,10 @@ void Position::set(const Position & pos){
 	m_z = pos.z();
 }
 
-void Position::set(const float & x, const float & y, const float & z){
-	m_x = x;
-	m_y = y;
-	m_z = z;
+void Position::set(const float & n_x, const float & n_y, const float & n_z){
+	m_x = n_x;
+	m_y = n_y;
+	m_z = n_z;
 }
 
 
@@ -116,4 +116,9 @@ void Position::rotateYZ(float degrees){
 	y() = (old_y*cos(radians)) + (old_z*sin(radians));
 	z() = -(old_y*sin(radians)) + (old_z*cos(radians));
 
+}
+
+std::ostream & operator <<(std::ostream & stream, const Position & p){
+	stream << "(" << p.x() << "," << p.y() << "," << p.z() << ")";
+	return stream;
 }

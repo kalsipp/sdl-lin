@@ -86,7 +86,6 @@ void Mainclass::run(){
 		std::chrono::time_point<std::chrono::high_resolution_clock> now = std::chrono::high_resolution_clock::now();
 		std::chrono::duration<double> diff = now-m_last_frame;
 		std::chrono::milliseconds diff_ms = std::chrono::duration_cast<std::chrono::milliseconds>(diff);
-
 		//Player Update
 		update_keys();
 		if(m_keymanager.key_down(SDLK_p)){
@@ -97,7 +96,7 @@ void Mainclass::run(){
 			m_event_ongoing = (m_current_event.update(this));
 		}
 
-	
+
 		//Rendering
 		if(diff.count() > m_frame_delay){
 			Position refpos = player()->position()-world_position();
@@ -138,7 +137,6 @@ void Mainclass::render(){
 
 		if(debug_show_colliders){
 			SDL_SetRenderDrawColor(m_main_renderer, 255, 255, 255, 255);
-
 			if((*it)->collider() != nullptr)(*it)->collider()->render(m_main_renderer, world_position());
 			SDL_SetRenderDrawColor(m_main_renderer, 255, 0,0,255);
 			if((*it)->interactioncomponent() != nullptr) (*it)->interactioncomponent()->triggercollider()->render(m_main_renderer, world_position());
@@ -157,6 +155,7 @@ void Mainclass::post_update(){
 
 void Mainclass::setup_gameobjects(){
 	std::cout << "Setting up gameobjects..." << std::endl;
+	/*
 	std::string filename = "levels/level.txt";
 	std::ifstream infile(filename.c_str());
 	std::stringstream buffer;
@@ -202,7 +201,7 @@ void Mainclass::setup_gameobjects(){
 		
 		}
 	}
-	/*
+	*/	
 	Player * player = new Player(this);
 	m_player = player;
 	player->visualcomponent()->load_spritesheet("media/player_new.png", 32, 32, m_main_renderer);
@@ -241,7 +240,6 @@ void Mainclass::setup_gameobjects(){
 	go->collider()->enable(false);
 	go->position().z() = -10;
 	m_gameobjects.push_back(go);
-	*/	
 	/*
 	*/
 	std::cout << "Finished setting up gameobjects." << std::endl;
@@ -257,9 +255,12 @@ void Mainclass::update_keys(){
 			break; 
 
 			case SDL_TEXTINPUT:
+				/*
 				if(m_main_event.text.text[0] == 'q'){
 					m_running = false;
 				}
+				*/
+				m_keymanager.text_input(m_main_event.text.text);
 			break;
 			case SDL_KEYUP:
 				m_keymanager.set(m_main_event.key.keysym.sym, false);
@@ -333,4 +334,15 @@ Gameobject * Mainclass::player(){
 
 const Position & Mainclass::world_position(){
 	return m_world_position;
+}
+
+Position Mainclass::window_to_world_position(const Position & val){
+	Position k (val);
+	k.add(world_position());
+	return k;
+}
+Position Mainclass::world_to_window_position(const Position & val){
+	Position k (val);
+	k.subtract(world_position());
+	return k;
 }

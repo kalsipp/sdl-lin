@@ -31,13 +31,17 @@ public:
 	VisualComponent* visualcomponent();
 	InteractionComponent * interactioncomponent();
 	Collider* collider();
+	void set_world_relative(bool);
+	bool & enabled();
 	//const Collider & collider()const;
 protected:
+
 	Mainclass * m_mainclass = nullptr;
 	Position m_position;
 	std::string m_name = "";
 	VisualComponent * m_visualcomponent = nullptr;
 	Collider * m_collider = nullptr;
 	InteractionComponent * m_interactioncomponent = nullptr;
-
+	bool position_world_relative = true;
+	bool m_enabled = true;
 };

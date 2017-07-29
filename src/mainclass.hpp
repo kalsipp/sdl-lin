@@ -38,7 +38,8 @@ public:
 	Gameobject * player();
 	const Position & world_position();
 	bool start_event(const Event &); //return true if event started.
-
+	Position window_to_world_position(const Position &);
+	Position world_to_window_position(const Position &);
 
 protected:	
 	std::vector<std::string> split_by_delimiter(const std::string & in, char delimiter);
@@ -55,8 +56,8 @@ protected:
 	SDL_Renderer * m_main_renderer = NULL;
 	Player * m_player = nullptr;
 	Position m_world_position;
-	int m_screen_height = 640;
-	int m_screen_width = 480;
+	int m_screen_height = 768;
+	int m_screen_width = 1024;
 	bool m_init_ok = true;
 	bool m_running = true; //Set false to shut down main game loop. 
 	SDL_Event m_main_event; //Event container

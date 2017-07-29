@@ -30,6 +30,7 @@ class Position{
 		float y()const;
 		float & z();
 		float z()const;
+		friend std::ostream & operator <<(std::ostream & stream, const Position & p);
 	private:
 		float m_x = 0;
 		float m_y = 0;

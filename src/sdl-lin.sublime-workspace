@@ -4,6 +4,98 @@
 		"selected_items":
 		[
 			[
+				"edit_",
+				"edit_text"
+			],
+			[
+				"Editor",
+				"EditorObject"
+			],
+			[
+				"Edit",
+				"EditorObject"
+			],
+			[
+				"vis",
+				"m_visualpath"
+			],
+			[
+				"maincla",
+				"mainclass"
+			],
+			[
+				"TEXT",
+				"TEXT_SPRITESHEET"
+			],
+			[
+				"m_ed",
+				"m_edit_gameobjects"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"m_",
+				"m_mouse_object"
+			],
+			[
+				"world",
+				"window_to_world_position"
+			],
+			[
+				"m_mo",
+				"m_mouse_object"
+			],
+			[
+				"text",
+				"text_input"
+			],
+			[
+				"m_m",
+				"m_mouse_position"
+			],
+			[
+				"set",
+				"set_world_relative"
+			],
+			[
+				"m_mos",
+				"m_mouse_position"
+			],
+			[
+				"m_mouse",
+				"m_mouse_collider"
+			],
+			[
+				"m_mou",
+				"m_mouse_state"
+			],
+			[
+				"m_Te",
+				"m_text_texture"
+			],
+			[
+				"m_tex",
+				"m_text_texture"
+			],
+			[
+				"helo",
+				"heleo"
+			],
+			[
+				"te",
+				"textsurface"
+			],
+			[
+				"inter",
+				"InteractionComponent"
+			],
+			[
+				"sprite",
+				"sprite_height"
+			],
+			[
 				"m_mai",
 				"m_main_renderer"
 			],
@@ -60,16 +152,8 @@
 				"m_current_event"
 			],
 			[
-				"m_",
-				"m_interactioncomponent"
-			],
-			[
 				"m_tr",
 				"m_triggered"
-			],
-			[
-				"set",
-				"setup_animations"
 			],
 			[
 				"int",
@@ -82,10 +166,6 @@
 			[
 				"key",
 				"keymanager"
-			],
-			[
-				"maincla",
-				"Mainclass"
 			],
 			[
 				"keym",
@@ -180,10 +260,6 @@
 				"player_movement"
 			],
 			[
-				"vis",
-				"VisualComponent"
-			],
-			[
 				"comp",
 				"components"
 			],
@@ -247,166 +323,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/kalsipp/sdl-lin/scripts/event template",
-			"settings":
-			{
-				"buffer_size": 3839,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/kalsipp/sdl-lin/makefile",
-			"settings":
-			{
-				"buffer_size": 916,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "action.hpp",
-			"settings":
-			{
-				"buffer_size": 912,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "action.cpp",
-			"settings":
-			{
-				"buffer_size": 971,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "event.hpp",
-			"settings":
-			{
-				"buffer_size": 642,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "event.cpp",
-			"settings":
-			{
-				"buffer_size": 1820,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "staticobject.cpp",
-			"settings":
-			{
-				"buffer_size": 283,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "staticobject.hpp",
-			"settings":
-			{
-				"buffer_size": 176,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/kalsipp/sdl-lin/scripts/encrypt.cpp",
-			"settings":
-			{
-				"buffer_size": 1433,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "keymanager.cpp",
-			"settings":
-			{
-				"buffer_size": 1126,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "mainclass.hpp",
-			"settings":
-			{
-				"buffer_size": 1742,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "mainclass.cpp",
-			"settings":
-			{
-				"buffer_size": 8451,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.cpp",
-			"settings":
-			{
-				"buffer_size": 253,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "player.hpp",
-			"settings":
-			{
-				"buffer_size": 926,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "player.cpp",
-			"settings":
-			{
-				"buffer_size": 5892,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gameobject.hpp",
-			"settings":
-			{
-				"buffer_size": 1123,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "sdl-lin.sublime-project",
-			"settings":
-			{
-				"buffer_size": 65,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gameobject.cpp",
-			"settings":
-			{
-				"buffer_size": 1514,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/Makefile/Make.sublime-build",
 	"build_system_choices":
@@ -477,30 +393,51 @@
 	"expanded_folders":
 	[
 		"/home/kalsipp/sdl-lin",
+		"/home/kalsipp/sdl-lin/levels",
+		"/home/kalsipp/sdl-lin/scripts",
 		"/home/kalsipp/sdl-lin/src"
 	],
 	"file_history":
 	[
-		"/home/kalsipp/.config/sublime-text-3/Packages/User/Make (Linux).sublime-build",
-		"/home/kalsipp/sdl-lin/src/interactioncomponent.cpp",
-		"/home/kalsipp/sdl-lin/src/collider.cpp",
-		"/home/kalsipp/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-		"/home/kalsipp/sdl-lin/src/sdl-lin.sublime-project",
-		"/home/kalsipp/sdl-lin/scripts/script.scr",
-		"/home/kalsipp/sdl-lin/src/npc.cpp",
-		"/home/kalsipp/sdl-lin/src/visualcomponent.cpp",
 		"/home/kalsipp/sdl-lin/src/mainclass.cpp",
 		"/home/kalsipp/sdl-lin/src/visualcomponent.hpp",
-		"/home/kalsipp/sdl-lin/src/keymanager.hpp",
-		"/home/kalsipp/sdl-lin/src/keymanager.cpp",
+		"/home/kalsipp/sdl-lin/src/visualcomponent.cpp",
+		"/home/kalsipp/sdl-lin/src/gameobject.cpp",
+		"/home/kalsipp/sdl-lin/src/mainclass.hpp",
+		"/home/kalsipp/sdl-lin/src/gameobject.hpp",
+		"/home/kalsipp/sdl-lin/levels/level.txt",
+		"/home/kalsipp/sdl-lin/src/collider.cpp",
+		"/home/kalsipp/sdl-lin/src/collider.hpp",
+		"/home/kalsipp/sdl-lin/src/interactioncomponent.cpp",
+		"/home/kalsipp/sdl-lin/src/interactioncomponent.hpp",
+		"/home/kalsipp/sdl-lin/scripts/event template",
+		"/home/kalsipp/sdl-lin/makefile",
+		"/home/kalsipp/sdl-lin/src/action.hpp",
+		"/home/kalsipp/sdl-lin/src/action.cpp",
+		"/home/kalsipp/sdl-lin/src/event.hpp",
 		"/home/kalsipp/sdl-lin/src/texture.hpp",
 		"/home/kalsipp/sdl-lin/src/texture.cpp",
-		"/home/kalsipp/sdl-lin/src/collider.hpp",
-		"/home/kalsipp/sdl-lin/src/position.cpp",
-		"/home/kalsipp/sdl-lin/src/position.hpp",
 		"/home/kalsipp/sdl-lin/src/main.cpp",
-		"/home/kalsipp/sdl-lin/src/gameobject.cpp",
-		"/home/kalsipp/sdl-lin/src/gameobject.hpp",
+		"/home/kalsipp/sdl-lin/src/staticobject.cpp",
+		"/home/kalsipp/sdl-lin/src/staticobject.hpp",
+		"/home/kalsipp/sdl-lin/src/editorobject.hpp",
+		"/home/kalsipp/sdl-lin/src/editorobject.cpp",
+		"/home/kalsipp/sdl-lin/src/keymanager.hpp",
+		"/home/kalsipp/sdl-lin/src/keymanager.cpp",
+		"/home/kalsipp/sdl-lin/scripts/encrypt.cpp",
+		"/home/kalsipp/sdl-lin/src/editor.hpp",
+		"/home/kalsipp/sdl-lin/src/editor.cpp",
+		"/home/kalsipp/sdl-lin/src/player.hpp",
+		"/home/kalsipp/sdl-lin/src/player.cpp",
+		"/home/kalsipp/sdl-lin/src/position.hpp",
+		"/home/kalsipp/sdl-lin/src/position.cpp",
+		"/home/kalsipp/sdl-lin/src/sdl-lin.sublime-project",
+		"/home/kalsipp/sdl-lin/src/npc.cpp",
+		"/home/kalsipp/sdl-lin/src/editorsystem",
+		"/home/kalsipp/sdl-lin/src/event.cpp",
+		"/home/kalsipp/.config/sublime-text-3/Packages/User/Make (Linux).sublime-build",
+		"/home/kalsipp/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/kalsipp/sdl-lin/scripts/script.scr",
 		"/home/kalsipp/sdl-lin/src/npc.hpp",
 		"/home/kalsipp/sdl-lin/scripts/script.sh",
 		"/home/kalsipp/sdl-lin/scripts/script.txt",
@@ -514,15 +451,11 @@
 		"/home/kalsipp/sdl-lin/src/old/player.cpp",
 		"/home/kalsipp/sdl-lin/src/old/gameobject.cpp",
 		"/home/kalsipp/sdl-lin/src/actormovement.hpp",
-		"/home/kalsipp/sdl-lin/src/mainclass.hpp",
 		"/home/kalsipp/sdl-lin/src/old/spritesheet.cpp",
 		"/home/kalsipp/sdl-lin/src/old/spritesheet.hpp",
-		"/home/kalsipp/sdl-lin/src/player.hpp",
-		"/home/kalsipp/sdl-lin/src/player.cpp",
 		"/home/kalsipp/sdl-lin/todo",
 		"/home/kalsipp/sdl-lin/src/old/collider.cpp",
 		"/home/kalsipp/sdl-lin/src/old/collider.hpp",
-		"/home/kalsipp/sdl-lin/makefile",
 		"/home/kalsipp/sdl-lin/src/component.hpp",
 		"/home/kalsipp/sdl-lin/src/component.cpp",
 		"/home/kalsipp/sdl-lin/src/old/gameobject.hpp",
@@ -554,7 +487,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -568,6 +501,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"render",
+			"m_gameo",
+			"m_texture",
+			"}/*",
 			"m_main_event",
 			"init",
 			"new"
@@ -588,532 +525,13 @@
 	"groups":
 	[
 		{
-			"selected": 11,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/kalsipp/sdl-lin/scripts/event template",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3839,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3269,
-								3269
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1080.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/kalsipp/sdl-lin/makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 916,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								619,
-								619
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "action.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 912,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								697,
-								697
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "action.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								786,
-								786
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "event.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 642,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								536,
-								536
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "event.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1820,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1260,
-								1260
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 990.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "staticobject.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								282,
-								282
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "staticobject.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 176,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								137,
-								137
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/kalsipp/sdl-lin/scripts/encrypt.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1433,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								784,
-								784
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "keymanager.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1126,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								235,
-								235
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "mainclass.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1742,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								964,
-								964
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 360.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "mainclass.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8451,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1039,
-								1039
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "main.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								197,
-								197
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "player.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 926,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								450,
-								450
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "player.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5892,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								631,
-								631
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "gameobject.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1123,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								166,
-								166
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "sdl-lin.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 65,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								65,
-								65
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 17,
-					"file": "gameobject.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								478,
-								478
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1145,7 +563,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.508521253306,
 			1.0
 		],
 		"rows":
@@ -1157,7 +575,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 112.0
 	},
 	"output.find_results":
 	{
@@ -1205,7 +623,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 253.0,
+	"side_bar_width": 216.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

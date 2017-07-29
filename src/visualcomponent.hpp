@@ -33,6 +33,7 @@ public:
 	bool load_spritesheet(const std::string & path, int sprite_width, int sprite_height, SDL_Renderer * main_renderer);
 	bool load_text(std::string text, TTF_Font * font, SDL_Renderer * main_renderer);
 	void scale(const int & x);
+	void set_centered(bool);
 private:
 	bool m_enabled = false;
 	unsigned int m_current_animation = 0;
@@ -41,4 +42,5 @@ private:
 	std::map<int, Animation> m_animations;
 	std::vector<Texture*> m_textures;
 	Texture * m_text_texture = nullptr;
+	bool m_centered = true;
 };

@@ -49,11 +49,14 @@ void VisualComponent::add_animation(unsigned int key, const Animation& new_anim)
 void VisualComponent::set_animation(unsigned int key){
 	m_current_animation = key;
 }
+void VisualComponent::set_centered(bool x){
+	m_centered = x;
+}
 unsigned int VisualComponent::current_animation(){
 	return m_current_animation;
 }
 void VisualComponent::render(SDL_Renderer* main_renderer, const Position & position){
-	if(m_text_texture != nullptr) m_text_texture->render(position.x(), position.y(), main_renderer);
+	if(m_text_texture != nullptr) m_text_texture->render(position.x(), position.y(), main_renderer, m_centered);
 
 	if(m_textures.size() == 0) return;	
 	std::chrono::time_point<std::chrono::high_resolution_clock> now = std::chrono::high_resolution_clock::now();
@@ -68,7 +71,7 @@ void VisualComponent::render(SDL_Renderer* main_renderer, const Position & posit
 	//std::cout << "Current frame " << m_animations[m_current_animation].get_current_frame() << " size " << m_textures.size() << std::endl; 
 	assert(m_animations[m_current_animation].get_current_frame() < m_textures.size() && "The attempted frame/texture does not exist");
 	
-	m_textures[m_animations[m_current_animation].get_current_frame()]->render(position.x(), position.y(), main_renderer);
+	m_textures[m_animations[m_current_animation].get_current_frame()]->render(position.x(), position.y(), main_renderer, m_centered);
 
 }
 
